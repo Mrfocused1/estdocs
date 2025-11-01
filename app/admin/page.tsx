@@ -1363,12 +1363,25 @@ const AboutTab = ({ content, updateContent }: any) => (
 // Portfolio Tab
 const PortfolioTab = ({ content, updateNestedContent }: any) => (
   <div className="space-y-8">
-    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
-      Portfolio Management
-    </h2>
+    <div className="flex justify-between items-start mb-6">
+      <div>
+        <h2 className="text-3xl font-display italic uppercase text-primary-red mb-2">
+          Portfolio Management
+        </h2>
+        <p className="text-white/60 font-body text-sm">
+          Click on any field below to edit. Changes are saved automatically.
+        </p>
+      </div>
+    </div>
 
-    <div className="space-y-6">
-      {content.portfolio.map((item: any, index: number) => (
+    {content.portfolio.length === 0 ? (
+      <div className="text-center py-12 border-2 border-dashed border-primary-red/30 rounded-lg">
+        <p className="text-white/60 font-body text-lg mb-4">No portfolio items yet</p>
+        <p className="text-white/40 font-body text-sm">Click the button below to add your first portfolio item</p>
+      </div>
+    ) : (
+      <div className="space-y-6">
+        {content.portfolio.map((item: any, index: number) => (
         <div key={item.id} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
           <div className="flex justify-between items-center mb-2">
             <h4 className="text-lg font-display italic uppercase text-primary-red">
@@ -1436,21 +1449,22 @@ const PortfolioTab = ({ content, updateNestedContent }: any) => (
           )}
         </div>
       ))}
+      </div>
+    )}
 
-      <button
-        onClick={() => {
-          const newItem = {
-            id: Date.now().toString(),
-            title: "New Portfolio Item",
-            description: "Add a description for this portfolio item",
-            videoUrl: "",
-          };
-          updateNestedContent(['portfolio'], [...content.portfolio, newItem]);
-        }}
-        className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
-      >
-        Add Portfolio Item
-      </button>
-    </div>
+    <button
+      onClick={() => {
+        const newItem = {
+          id: Date.now().toString(),
+          title: "New Portfolio Item",
+          description: "Add a description for this portfolio item",
+          videoUrl: "",
+        };
+        updateNestedContent(['portfolio'], [...content.portfolio, newItem]);
+      }}
+      className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+    >
+      Add Portfolio Item
+    </button>
   </div>
 );
