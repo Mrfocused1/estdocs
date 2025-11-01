@@ -266,63 +266,33 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 top-20 bg-dark-navy z-40"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-
-            {/* Menu Content */}
-            <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden fixed inset-0 top-20 z-50 bg-dark-navy overflow-hidden"
-            >
-              <div className="h-full overflow-y-auto px-6 py-8">
-                <div className="space-y-2 max-w-md mx-auto">
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="md:hidden fixed inset-0 top-20 bg-dark-navy z-[9999]"
+          >
+            <div className="h-full overflow-y-auto px-6 py-6 bg-dark-navy">
+              <div className="space-y-3">
                 {/* Home Link */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 }}
+                <Link
+                  href="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
                 >
-                  <Link
-                    href="/"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-between px-6 py-4 bg-white/5 hover:bg-primary-red/20 rounded-xl transition-all duration-300 group"
-                  >
-                    <span className="text-white text-xl font-display italic uppercase font-bold group-hover:text-primary-red transition-colors">
-                      Home
-                    </span>
-                    <svg className="w-5 h-5 text-primary-red/50 group-hover:text-primary-red group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </motion.div>
+                  Home
+                </Link>
 
-                {/* Services Expandable Section */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.15 }}
-                  className="overflow-hidden rounded-xl bg-white/5"
-                >
+                {/* Services */}
+                <div className="bg-primary-red/10 rounded-lg overflow-hidden">
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="flex items-center justify-between w-full px-6 py-4 hover:bg-primary-red/20 transition-all duration-300 group"
+                    className="w-full flex items-center justify-between px-6 py-4 text-white font-display italic uppercase font-bold text-lg hover:bg-primary-red hover:text-accent-black transition-all"
                   >
-                    <span className="text-white text-xl font-display italic uppercase font-bold group-hover:text-primary-red transition-colors">
-                      Services
-                    </span>
+                    Services
                     <svg
-                      className={`w-5 h-5 text-primary-red transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -331,87 +301,76 @@ const Navbar = () => {
                     </svg>
                   </button>
 
-                  <AnimatePresence>
-                    {isMobileServicesOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="border-t border-white/10"
-                      >
-                        <div className="px-4 py-2 space-y-1">
-                          {servicesLinks.map((service, idx) => (
-                            <Link
-                              key={service.name}
-                              href={service.href}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="flex items-center px-4 py-3 text-white/80 hover:text-primary-red hover:bg-white/5 rounded-lg transition-all duration-200 font-display italic uppercase font-bold text-base group"
-                            >
-                              <span className="w-2 h-2 rounded-full bg-primary-red/50 mr-3 group-hover:bg-primary-red transition-colors"></span>
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                  {isMobileServicesOpen && (
+                    <div className="bg-white/5 px-4 py-2">
+                      {servicesLinks.map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block px-4 py-3 text-white/90 hover:text-primary-red hover:bg-white/5 rounded font-display italic uppercase font-bold text-base transition-all"
+                        >
+                          • {service.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
 
-                {/* Remaining Links */}
-                {navLinks.slice(1).map((link, index) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + index * 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-between px-6 py-4 bg-white/5 hover:bg-primary-red/20 rounded-xl transition-all duration-300 group"
-                    >
-                      <span className="text-white text-xl font-display italic uppercase font-bold group-hover:text-primary-red transition-colors">
-                        {link.name}
-                      </span>
-                      <svg className="w-5 h-5 text-primary-red/50 group-hover:text-primary-red group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </motion.div>
-                ))}
+                {/* Portfolio */}
+                <Link
+                  href="/portfolio"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                >
+                  Portfolio
+                </Link>
+
+                {/* Booking */}
+                <Link
+                  href="/booking"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                >
+                  Booking
+                </Link>
+
+                {/* About */}
+                <Link
+                  href="/about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                >
+                  About
+                </Link>
+
+                {/* Contact */}
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                >
+                  Contact
+                </Link>
 
                 {/* CTA Button */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4 }}
-                  className="pt-6"
+                <Link
+                  href="/booking"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-8 py-5 bg-primary-red text-accent-black rounded-lg font-display italic uppercase font-bold text-xl text-center shadow-lg mt-6"
                 >
-                  <Link
-                    href="/booking"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center px-8 py-5 bg-primary-red text-accent-black rounded-xl font-display italic uppercase font-bold text-xl shadow-lg shadow-primary-red/30 hover:shadow-primary-red/50 hover:scale-105 transition-all duration-300"
-                  >
-                    Book Your Session
-                  </Link>
-                </motion.div>
+                  Book Now
+                </Link>
 
-                {/* User Links */}
+                {/* User Section */}
                 {user ? (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="pt-6 border-t border-white/10 mt-6"
-                  >
+                  <div className="pt-6 mt-6 border-t border-white/20">
                     <div className="flex items-center gap-3 mb-4 px-2">
-                      <div className="w-12 h-12 bg-primary-red text-accent-black rounded-full flex items-center justify-center font-bold text-lg">
+                      <div className="w-10 h-10 bg-primary-red text-accent-black rounded-full flex items-center justify-center font-bold">
                         {user.email?.[0].toUpperCase()}
                       </div>
                       <div className="flex-1">
-                        <p className="text-white font-display italic uppercase font-bold text-sm">Signed in as</p>
-                        <p className="text-white/60 text-xs truncate">{user.email}</p>
+                        <p className="text-white font-body text-sm">{user.email}</p>
                       </div>
                     </div>
                     <button
@@ -419,38 +378,32 @@ const Navbar = () => {
                         signOut();
                         setIsMobileMenuOpen(false);
                       }}
-                      className="w-full px-6 py-3 bg-white/5 hover:bg-red-500/20 text-white hover:text-red-400 rounded-xl transition-all duration-300 font-display italic uppercase font-bold"
+                      className="w-full px-6 py-3 bg-red-500/20 text-red-400 hover:bg-red-500/30 rounded-lg font-display italic uppercase font-bold"
                     >
                       Sign Out
                     </button>
-                  </motion.div>
+                  </div>
                 ) : (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="pt-6 border-t border-white/10 mt-6 space-y-2"
-                  >
+                  <div className="pt-6 mt-6 border-t border-white/20 space-y-3">
                     <Link
                       href="/login"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-6 py-3 bg-white/5 hover:bg-primary-red/20 text-white hover:text-primary-red rounded-xl transition-all duration-300 font-display italic uppercase font-bold text-center"
+                      className="block px-6 py-3 bg-white/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg font-display italic uppercase font-bold text-center"
                     >
                       Login
                     </Link>
                     <Link
                       href="/signup"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-6 py-3 bg-white/5 hover:bg-primary-red/20 text-white hover:text-primary-red rounded-xl transition-all duration-300 font-display italic uppercase font-bold text-center"
+                      className="block px-6 py-3 bg-white/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg font-display italic uppercase font-bold text-center"
                     >
                       Sign Up
                     </Link>
-                  </motion.div>
+                  </div>
                 )}
-                </div>
               </div>
-            </motion.div>
-          </>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
