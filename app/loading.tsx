@@ -1,43 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaPlay } from "react-icons/fa";
 
 export default function Loading() {
   return (
     <div className="fixed inset-0 bg-dark-navy z-50 flex items-center justify-center">
       <div className="text-center">
         {/* Animated Logo */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.5 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 0.5,
+            duration: 0.8,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut",
           }}
-          className="text-5xl md:text-7xl font-display italic uppercase text-primary-red mb-8"
         >
-          EastDocs
-        </motion.h1>
-
-        {/* Loading Spinner */}
-        <div className="flex justify-center gap-2">
-          {[0, 1, 2].map((index) => (
-            <motion.div
-              key={index}
-              initial={{ y: 0 }}
-              animate={{ y: [-10, 10, -10] }}
-              transition={{
-                duration: 0.6,
-                repeat: Infinity,
-                delay: index * 0.15,
-                ease: "easeInOut",
-              }}
-              className="w-3 h-3 bg-primary-red rounded-full"
-            />
-          ))}
-        </div>
+          <h1 className="text-5xl md:text-7xl font-display italic uppercase flex items-center">
+            <span className="text-white">East</span>
+            <span className="text-primary-red">D</span>
+            <FaPlay className="text-primary-red text-3xl md:text-5xl mx-1" />
+            <span className="text-primary-red">cks</span>
+            <span className="text-white text-2xl md:text-4xl tracking-widest ml-2 font-thin">
+              STUDIOS
+            </span>
+          </h1>
+        </motion.div>
       </div>
     </div>
   );
