@@ -24,7 +24,8 @@ const Preloader = () => {
             duration: 1,
             ease: [0.6, 0.05, 0.01, 0.9]
           }}
-          className="fixed inset-0 z-[100] bg-black"
+          className="fixed inset-0 bg-black"
+          style={{ zIndex: 200000 }}
         >
           {/* Torn paper edge at bottom */}
           <svg
