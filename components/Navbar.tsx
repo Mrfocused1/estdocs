@@ -266,15 +266,27 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed inset-0 top-20 z-40 bg-dark-navy"
-          >
-            <div className="h-full overflow-y-auto px-6 py-8">
-              <div className="space-y-2 max-w-md mx-auto">
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden fixed inset-0 top-20 bg-dark-navy z-40"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+
+            {/* Menu Content */}
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden fixed inset-0 top-20 z-50 bg-dark-navy overflow-hidden"
+            >
+              <div className="h-full overflow-y-auto px-6 py-8">
+                <div className="space-y-2 max-w-md mx-auto">
                 {/* Home Link */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
@@ -435,9 +447,10 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 )}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>
