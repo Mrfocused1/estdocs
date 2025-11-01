@@ -2,6 +2,13 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  description: string;
+  videoUrl: string;
+}
+
 export interface SiteContent {
   // Company Info
   companyName: string;
@@ -149,6 +156,9 @@ export interface SiteContent {
     mission: string;
     vision: string;
   };
+
+  // Portfolio
+  portfolio: PortfolioItem[];
 }
 
 const defaultContent: SiteContent = {
@@ -160,7 +170,9 @@ const defaultContent: SiteContent = {
   phone: "+44 20 1234 5678",
   address: {
     line1: "30 Seagull Lane",
+    line2: "",
     city: "London",
+    postcode: "",
   },
 
   socialMedia: {
@@ -502,10 +514,13 @@ const defaultContent: SiteContent = {
     mission: "To empower creators with professional tools, spaces, and support to bring their boldest ideas to life.",
     vision: "To be the leading creative hub in London where every voice has the opportunity to be heard with broadcast-quality production.",
   },
+
+  portfolio: [],
 };
 
-interface ContentContextType {
+export interface ContentContextType {
   content: SiteContent;
+  setContent: React.Dispatch<React.SetStateAction<SiteContent>>;
   updateContent: (newContent: Partial<SiteContent>) => void;
   updateNestedContent: (path: string[], value: any) => void;
   resetContent: () => void;
@@ -787,7 +802,7 @@ export const ContentProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <ContentContext.Provider value={{ content, updateContent, updateNestedContent, resetContent }}>
+    <ContentContext.Provider value={{ content, setContent, updateContent, updateNestedContent, resetContent }}>
       {children}
     </ContentContext.Provider>
   );
