@@ -290,21 +290,7 @@ export default function StudioHire() {
                     ))}
                   </ul>
 
-                  {false && (
-                    <>
-                      <div className="text-white/40 font-display italic uppercase text-xs mb-3 tracking-wider">
-                        Limitations
-                      </div>
-                      <ul className="space-y-3">
-                        {pkg.limitations.map((limitation, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="text-white/30 mr-3 mt-1 flex-shrink-0">×</span>
-                            <span className="text-white/50 font-body text-sm">{limitation}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
+                  
                 </div>
 
                 <Link
