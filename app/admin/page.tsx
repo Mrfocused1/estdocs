@@ -5,7 +5,6 @@ import { useContent } from "@/contexts/ContentContext";
 import { motion } from "framer-motion";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { FileUpload } from "@/components/FileUpload";
-import Link from "next/link";
 
 export default function AdminDashboard() {
   const { content, updateContent, updateNestedContent, resetContent } = useContent();
@@ -106,19 +105,7 @@ export default function AdminDashboard() {
           {activeTab === "live-streaming" && <LiveStreamingTab content={content} updateNestedContent={updateNestedContent} />}
           {activeTab === "membership" && <MembershipTab content={content} updateNestedContent={updateNestedContent} />}
           {activeTab === "about" && <AboutTab content={content} updateContent={updateContent} />}
-          {activeTab === "portfolio" && (
-            <div className="text-center">
-              <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
-                Portfolio Management
-              </h2>
-              <p className="text-white/70 font-body mb-6">
-                The portfolio is now managed on its own dedicated page for a better experience.
-              </p>
-              <Link href="/admin/portfolio" className="btn-primary">
-                Go to Portfolio Page
-              </Link>
-            </div>
-          )}
+          {activeTab === "portfolio" && <PortfolioTab content={content} updateNestedContent={updateNestedContent} />}
         </div>
 
         {/* Action Buttons */}
@@ -1370,5 +1357,100 @@ const AboutTab = ({ content, updateContent }: any) => (
       onChange={(val: string) => updateContent({ about: { ...content.about, vision: val } })}
       rows={3}
     />
+  </div>
+);
+
+// Portfolio Tab
+const PortfolioTab = ({ content, updateNestedContent }: any) => (
+  <div className="space-y-8">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
+      Portfolio Management
+    </h2>
+
+    <div className="space-y-6">
+      {content.portfolio.map((item: any, index: number) => (
+        <div key={item.id} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
+          <div className="flex justify-between items-center mb-2">
+            <h4 className="text-lg font-display italic uppercase text-primary-red">
+              Portfolio Item {index + 1}
+            </h4>
+            <button
+              onClick={() => {
+                const newPortfolio = content.portfolio.filter((p: any) => p.id !== item.id);
+                updateNestedContent(['portfolio'], newPortfolio);
+              }}
+              className="text-red-400 hover:text-red-300 text-sm font-body"
+            >
+              Remove
+            </button>
+          </div>
+
+          <Input
+            label="Title"
+            value={item.title}
+            onChange={(val: string) => {
+              const newPortfolio = [...content.portfolio];
+              newPortfolio[index] = { ...item, title: val };
+              updateNestedContent(['portfolio'], newPortfolio);
+            }}
+          />
+
+          <Textarea
+            label="Description"
+            value={item.description}
+            onChange={(val: string) => {
+              const newPortfolio = [...content.portfolio];
+              newPortfolio[index] = { ...item, description: val };
+              updateNestedContent(['portfolio'], newPortfolio);
+            }}
+            rows={3}
+          />
+
+          <Input
+            label="Video URL (YouTube Embed)"
+            value={item.videoUrl}
+            onChange={(val: string) => {
+              const newPortfolio = [...content.portfolio];
+              newPortfolio[index] = { ...item, videoUrl: val };
+              updateNestedContent(['portfolio'], newPortfolio);
+            }}
+            placeholder="e.g., https://www.youtube.com/embed/your-video-id"
+          />
+
+          {item.videoUrl && (
+            <div className="mt-4">
+              <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
+                Preview
+              </label>
+              <div className="aspect-video w-full rounded-lg overflow-hidden bg-dark-navy/50">
+                <iframe
+                  src={item.videoUrl}
+                  title={item.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+
+      <button
+        onClick={() => {
+          const newItem = {
+            id: Date.now().toString(),
+            title: "New Portfolio Item",
+            description: "Add a description for this portfolio item",
+            videoUrl: "",
+          };
+          updateNestedContent(['portfolio'], [...content.portfolio, newItem]);
+        }}
+        className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+      >
+        Add Portfolio Item
+      </button>
+    </div>
   </div>
 );
