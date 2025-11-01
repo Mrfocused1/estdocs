@@ -241,7 +241,7 @@ const HeroSection = () => {
             <span>The </span>
             <span className="text-primary-red">Creative</span>
             <span> Home</span>
-            <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
               {videoUrl1 ? (
                 <video
                   autoPlay
@@ -266,7 +266,7 @@ const HeroSection = () => {
           >
             <span className="text-primary-red">Boldest</span>
             {/* Video Box 2 */}
-            <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
               {videoUrl2 ? (
                 <video
                   autoPlay
