@@ -233,56 +233,73 @@ const HeroSection = () => {
           animate="visible"
           className="max-w-4xl mx-auto"
         >
-          {/* Line 1: The Creative Home [VIDEO] of London's */}
-          <motion.h1
-            variants={wordVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
-          >
-            <span>The </span>
-            <span className="text-primary-red">Creative</span>
-            <span> Home</span>
-            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
-              {videoUrl1 ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={videoUrl1} type="video/mp4" />
-                </video>
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
-              )}
-            </span>
-            <span>of London's</span>
-          </motion.h1>
+          {/* Mobile & Desktop Headline */}
+          <div className="text-3xl md:text-6xl lg:text-7xl font-display italic uppercase leading-tight">
+            {/* Line 1: The Creative */}
+            <motion.h1
+              variants={wordVariants}
+              className="text-white mb-2 md:mb-3 text-center"
+            >
+              <span>The </span>
+              <span className="text-primary-red">Creative</span>
+            </motion.h1>
 
-          {/* Line 2: Boldest [VIDEO] Voices. */}
-          <motion.h1
-            variants={wordVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
-          >
-            <span className="text-primary-red">Boldest</span>
-            {/* Video Box 2 */}
-            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
-              {videoUrl2 ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={videoUrl2} type="video/mp4" />
-                </video>
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
-              )}
-            </span>
-            <span>Voices.</span>
-          </motion.h1>
+            {/* Line 2: Home [VIDEO] of / London's on mobile */}
+            <motion.h1
+              variants={wordVariants}
+              className="text-white mb-2 md:mb-3 flex items-center gap-2 md:gap-3 flex-wrap justify-center"
+            >
+              <span>Home</span>
+              <span className="inline-block h-[30px] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
+                {videoUrl1 ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  >
+                    <source src={videoUrl1} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
+                )}
+              </span>
+              <span>of</span>
+            </motion.h1>
+
+            {/* Line 3: London's Boldest */}
+            <motion.h1
+              variants={wordVariants}
+              className="text-white mb-2 md:mb-3 flex items-center gap-2 md:gap-3 justify-center"
+            >
+              <span>London's</span>
+              <span className="text-primary-red">Boldest</span>
+            </motion.h1>
+
+            {/* Line 4: [VIDEO] Voices */}
+            <motion.h1
+              variants={wordVariants}
+              className="text-white mb-2 md:mb-3 flex items-center gap-2 md:gap-3 justify-center"
+            >
+              <span className="inline-block h-[30px] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
+                {videoUrl2 ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  >
+                    <source src={videoUrl2} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
+                )}
+              </span>
+              <span>Voices.</span>
+            </motion.h1>
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
