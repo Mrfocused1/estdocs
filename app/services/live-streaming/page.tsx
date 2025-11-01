@@ -121,7 +121,7 @@ export default function LiveStreaming() {
                   </h3>
                   <div>
                     <span className="text-5xl font-display italic uppercase text-white">{pkg.price}</span>
-                    <span className="text-white/60 font-body text-sm ml-2">{pkg.unit}</span>
+                    <span className="text-white/60 font-body text-sm ml-2">{pkg.duration}</span>
                   </div>
                 </div>
 
