@@ -226,7 +226,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-dark-navy/90 to-transparent"></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center pt-32 md:pt-40">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-24 md:pt-40">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -236,7 +236,7 @@ const HeroSection = () => {
           {/* Line 1: The Creative Home */}
           <motion.h1
             variants={wordVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight"
           >
             <span>The </span>
             <span className="text-primary-yellow">Creative</span>
@@ -246,7 +246,7 @@ const HeroSection = () => {
           {/* Line 2: [VIDEO] of London's */}
           <motion.h1
             variants={wordVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-4 flex-wrap justify-center"
+            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
           >
             {/* Video Box 1 */}
             <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
@@ -270,7 +270,7 @@ const HeroSection = () => {
           {/* Line 3: Boldest [VIDEO] Voices. */}
           <motion.h1
             variants={wordVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-4 flex-wrap justify-center"
+            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
           >
             <span className="text-primary-yellow">Boldest</span>
             {/* Video Box 2 */}
@@ -296,7 +296,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-xl md:text-2xl text-white/90 font-body mt-8 mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-2xl text-white/90 font-body mt-8 mb-12 max-w-3xl mx-auto"
           >
             London's premier podcast, video, and livestream studio. Where
             creators, influencers, and brands craft unforgettable content.
@@ -306,12 +306,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
           >
-            <Link href="/booking" className="btn-primary">
+            <Link href="/booking" className="btn-primary w-full sm:w-auto">
               Book Your Session
             </Link>
-            <Link href="/portfolio" className="btn-secondary">
+            <Link href="/portfolio" className="btn-secondary w-full sm:w-auto">
               View Our Work
             </Link>
           </motion.div>
