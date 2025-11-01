@@ -38,7 +38,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
               duration: 0.6,
               ease: [0.6, 0.05, 0.01, 0.9],
             }}
-            className="fixed inset-0 bg-primary-yellow z-[60]"
+            className="fixed inset-0 bg-primary-red z-[60]"
           />
         )}
       </AnimatePresence>

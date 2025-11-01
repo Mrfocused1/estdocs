@@ -54,24 +54,26 @@ export default function LiveStreaming() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap justify-center leading-tight">
-              <span>Professional Live</span>
-              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
-                {videoUrl ? (
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                  >
-                    <source src={videoUrl} type="video/mp4" />
-                  </video>
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
-                )}
+            <h1 className="text-4xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-3 justify-center leading-tight">
+              <span className="flex items-center gap-3">
+                <span>Professional Live</span>
+                <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+                  {videoUrl ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                    >
+                      <source src={videoUrl} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
+                  )}
+                </span>
               </span>
-              <span className="text-primary-yellow">Streaming</span>
+              <span className="text-primary-red">Streaming</span>
             </h1>
             <p className="text-xl text-white/80 font-body mb-8 leading-relaxed">
               {content.liveStreaming.heroDescription}
@@ -94,7 +96,7 @@ export default function LiveStreaming() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Choose Your <span className="text-primary-yellow">Package</span>
+              Choose Your <span className="text-primary-red">Package</span>
             </h2>
           </motion.div>
 
@@ -107,16 +109,16 @@ export default function LiveStreaming() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 className={`card relative ${
-                  pkg.popular ? "border-primary-yellow shadow-2xl shadow-primary-yellow/20" : ""
+                  pkg.popular ? "border-primary-red shadow-2xl shadow-primary-red/20" : ""
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-yellow text-accent-black px-6 py-2 rounded-full font-display italic uppercase font-bold text-sm">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-red text-accent-black px-6 py-2 rounded-full font-display italic uppercase font-bold text-sm">
                     Most Popular
                   </div>
                 )}
                 <div className="text-center mb-6 mt-4">
-                  <h3 className="text-3xl font-display italic uppercase text-primary-yellow mb-4">
+                  <h3 className="text-3xl font-display italic uppercase text-primary-red mb-4">
                     {pkg.title}
                   </h3>
                   <div>
@@ -128,7 +130,7 @@ export default function LiveStreaming() {
                 <ul className="space-y-4 mb-8">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-primary-yellow mr-3 mt-1">✓</span>
+                      <span className="text-primary-red mr-3 mt-1">✓</span>
                       <span className="text-white/70 font-body">{feature}</span>
                     </li>
                   ))}
@@ -154,7 +156,7 @@ export default function LiveStreaming() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Streaming <span className="text-primary-yellow">Features</span>
+              Streaming <span className="text-primary-red">Features</span>
             </h2>
           </motion.div>
 
@@ -166,9 +168,9 @@ export default function LiveStreaming() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className="card hover:border-primary-yellow"
+                className="card hover:border-primary-red"
               >
-                <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+                <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                   {feature.title}
                 </h3>
                 <p className="text-white/70 font-body leading-relaxed">
@@ -191,7 +193,7 @@ export default function LiveStreaming() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Perfect For <span className="text-primary-yellow">Any Format</span>
+              Perfect For <span className="text-primary-red">Any Format</span>
             </h2>
           </motion.div>
 
@@ -201,9 +203,9 @@ export default function LiveStreaming() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-              className="card text-center hover:border-primary-yellow"
+              className="card text-center hover:border-primary-red"
             >
-              <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                 Interviews
               </h3>
               <p className="text-white/70 font-body">
@@ -216,9 +218,9 @@ export default function LiveStreaming() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="card text-center hover:border-primary-yellow"
+              className="card text-center hover:border-primary-red"
             >
-              <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                 Discussions
               </h3>
               <p className="text-white/70 font-body">
@@ -231,9 +233,9 @@ export default function LiveStreaming() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-              className="card text-center hover:border-primary-yellow"
+              className="card text-center hover:border-primary-red"
             >
-              <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                 Solo Broadcasts
               </h3>
               <p className="text-white/70 font-body">
@@ -254,9 +256,9 @@ export default function LiveStreaming() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="card border-primary-yellow/50">
+            <div className="card border-primary-red/50">
               <div className="text-center">
-                <h3 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+                <h3 className="text-3xl font-display italic uppercase text-primary-red mb-6">
                   We're Here to Help
                 </h3>
                 <p className="text-white/80 font-body text-lg leading-relaxed mb-6">
@@ -281,7 +283,7 @@ export default function LiveStreaming() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Ready to <span className="text-primary-yellow">Go Live?</span>
+              Ready to <span className="text-primary-red">Go Live?</span>
             </h2>
             <p className="text-xl text-white/80 font-body mb-8 max-w-2xl mx-auto">
               Book your live streaming session and broadcast to all your platforms with professional quality.

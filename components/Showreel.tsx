@@ -21,7 +21,7 @@ const Showreel = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-4">
-            {content.homepage.showreelTitle.split(' ').slice(0, -1).join(' ')} <span className="text-primary-yellow">{content.homepage.showreelTitle.split(' ').slice(-1)}</span>
+            {content.homepage.showreelTitle.split(' ').slice(0, -1).join(' ')} <span className="primary-red">{content.homepage.showreelTitle.split(' ').slice(-1)}</span>
           </h2>
           <p className="text-lg text-white/80 font-body max-w-2xl mx-auto">
             {content.homepage.showreelDescription}

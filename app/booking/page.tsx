@@ -44,7 +44,7 @@ export default function Booking() {
           >
             <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap justify-center leading-tight">
               <span>Book Your Studio</span>
-              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
                 {videoUrl ? (
                   <video
                     autoPlay
@@ -56,10 +56,10 @@ export default function Booking() {
                     <source src={videoUrl} type="video/mp4" />
                   </video>
                 ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
                 )}
               </span>
-              <span className="text-primary-yellow">Time</span>
+              <span className="text-primary-red">Time</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 font-body">
               Ready to create something amazing? Fill out the form below and
@@ -81,7 +81,7 @@ export default function Booking() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-dark-navy mb-4">
-              Our <span className="text-primary-yellow">Pricing</span>
+              Our <span className="text-primary-red">Pricing</span>
             </h2>
             <p className="text-xl text-dark-navy/70 font-body max-w-2xl mx-auto">
               Choose the package that fits your needs
@@ -96,36 +96,36 @@ export default function Booking() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-gray-50 rounded-card p-8 border-2 border-gray-200 hover:border-primary-yellow transition-all duration-300 hover:shadow-xl"
+              className="bg-gray-50 rounded-card p-8 border-2 border-gray-200 hover:border-primary-red transition-all duration-300 hover:shadow-xl"
             >
               <h3 className="text-2xl font-display italic uppercase text-dark-navy mb-4">
                 Studio + Engineer
               </h3>
               <div className="mb-6">
-                <span className="text-5xl font-display font-bold text-primary-yellow">£75</span>
+                <span className="text-5xl font-display font-bold text-primary-red">£75</span>
                 <span className="text-dark-navy/60 font-body">/hour</span>
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Up to 4 microphones</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">On-site engineer</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">24-hour file transfer</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Optional editing available</span>
                 </li>
               </ul>
               <a
                 href="#booking-form"
-                className="block w-full text-center bg-dark-navy text-primary-yellow px-6 py-3 rounded-lg font-display uppercase font-bold hover:bg-primary-yellow hover:text-dark-navy transition-all duration-300"
+                className="block w-full text-center bg-dark-navy text-primary-red px-6 py-3 rounded-lg font-display uppercase font-bold hover:bg-primary-red hover:text-dark-navy transition-all duration-300"
               >
                 Book Now
               </a>
@@ -137,9 +137,9 @@ export default function Booking() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-primary-yellow rounded-card p-8 border-2 border-primary-yellow relative hover:shadow-2xl transition-all duration-300 transform md:scale-105"
+              className="bg-primary-red rounded-card p-8 border-2 border-primary-red relative hover:shadow-2xl transition-all duration-300 transform md:scale-105"
             >
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-dark-navy text-primary-yellow px-4 py-1 rounded-full text-sm font-display uppercase font-bold">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-dark-navy text-primary-red px-4 py-1 rounded-full text-sm font-display uppercase font-bold">
                 Most Popular
               </div>
               <h3 className="text-2xl font-display italic uppercase text-dark-navy mb-4">
@@ -177,7 +177,7 @@ export default function Booking() {
               </ul>
               <a
                 href="#booking-form"
-                className="block w-full text-center bg-dark-navy text-primary-yellow px-6 py-3 rounded-lg font-display uppercase font-bold hover:bg-accent-black transition-all duration-300"
+                className="block w-full text-center bg-dark-navy text-primary-red px-6 py-3 rounded-lg font-display uppercase font-bold hover:bg-accent-black transition-all duration-300"
               >
                 Book Now
               </a>
@@ -189,44 +189,44 @@ export default function Booking() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-gray-50 rounded-card p-8 border-2 border-gray-200 hover:border-primary-yellow transition-all duration-300 hover:shadow-xl"
+              className="bg-gray-50 rounded-card p-8 border-2 border-gray-200 hover:border-primary-red transition-all duration-300 hover:shadow-xl"
             >
               <h3 className="text-2xl font-display italic uppercase text-dark-navy mb-4">
                 Studio + Advanced Editing
               </h3>
               <div className="mb-6">
-                <span className="text-5xl font-display font-bold text-primary-yellow">£155</span>
+                <span className="text-5xl font-display font-bold text-primary-red">£155</span>
                 <span className="text-dark-navy/60 font-body">/hour</span>
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Everything in Standard Editing</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Up to 2 revisions</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">7-day turnaround</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Graphics & overlays</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Social handles</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-yellow mt-1">✓</span>
+                  <span className="text-primary-red mt-1">✓</span>
                   <span className="text-dark-navy/80 font-body">Name tags</span>
                 </li>
               </ul>
               <a
                 href="#booking-form"
-                className="block w-full text-center bg-dark-navy text-primary-yellow px-6 py-3 rounded-lg font-display uppercase font-bold hover:bg-primary-yellow hover:text-dark-navy transition-all duration-300"
+                className="block w-full text-center bg-dark-navy text-primary-red px-6 py-3 rounded-lg font-display uppercase font-bold hover:bg-primary-red hover:text-dark-navy transition-all duration-300"
               >
                 Book Now
               </a>
@@ -240,29 +240,29 @@ export default function Booking() {
             viewport={{ once: true }}
             className="bg-dark-navy rounded-card p-8"
           >
-            <h3 className="text-3xl font-display italic uppercase text-primary-yellow mb-6 text-center">
+            <h3 className="text-3xl font-display italic uppercase text-primary-red mb-6 text-center">
               Additional Extras
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                 <span className="text-white font-display italic uppercase font-bold">Additional Camera</span>
-                <span className="text-primary-yellow font-display italic uppercase font-bold">£30/hour</span>
+                <span className="text-primary-red font-display italic uppercase font-bold">£30/hour</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                 <span className="text-white font-display italic uppercase font-bold">4K Files</span>
-                <span className="text-primary-yellow font-display italic uppercase font-bold">£15/hour</span>
+                <span className="text-primary-red font-display italic uppercase font-bold">£15/hour</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                 <span className="text-white font-display italic uppercase font-bold">Social Media Snippets</span>
-                <span className="text-primary-yellow font-display italic uppercase font-bold">£100</span>
+                <span className="text-primary-red font-display italic uppercase font-bold">£100</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                 <span className="text-white font-display italic uppercase font-bold">Teleprompter</span>
-                <span className="text-primary-yellow font-display italic uppercase font-bold">£30</span>
+                <span className="text-primary-red font-display italic uppercase font-bold">£30</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                 <span className="text-white font-display italic uppercase font-bold">Remote Guest</span>
-                <span className="text-primary-yellow font-display italic uppercase font-bold">£30</span>
+                <span className="text-primary-red font-display italic uppercase font-bold">£30</span>
               </div>
             </div>
           </motion.div>
@@ -280,7 +280,7 @@ export default function Booking() {
               transition={{ delay: 0.1 }}
               className="text-center p-8 card"
             >
-              <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                 Flexible Hours
               </h3>
               <p className="text-white/70 font-body">
@@ -296,7 +296,7 @@ export default function Booking() {
               transition={{ delay: 0.2 }}
               className="text-center p-8 card"
             >
-              <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                 All Equipment Included
               </h3>
               <p className="text-white/70 font-body">
@@ -312,7 +312,7 @@ export default function Booking() {
               transition={{ delay: 0.3 }}
               className="text-center p-8 card"
             >
-              <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-2xl font-display italic uppercase text-primary-red mb-4">
                 Expert Support
               </h3>
               <p className="text-white/70 font-body">

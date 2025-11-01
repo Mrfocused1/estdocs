@@ -34,7 +34,7 @@ export default function BookingSuccess() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-16 h-16 border-4 border-primary-yellow border-t-transparent rounded-full mx-auto mb-6"
+                className="w-16 h-16 border-4 border-primary-red border-t-transparent rounded-full mx-auto mb-6"
               />
               <p className="text-white font-body text-xl">
                 Confirming your payment...
@@ -48,14 +48,14 @@ export default function BookingSuccess() {
                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                 className="inline-block mb-8"
               >
-                <FaCheckCircle className="text-9xl text-primary-yellow" />
+                <FaCheckCircle className="text-9xl text-primary-red" />
               </motion.div>
 
               <h1 className="text-5xl md:text-6xl font-display italic uppercase text-white mb-6">
-                Payment <span className="text-primary-yellow">Successful!</span>
+                Payment <span className="text-primary-red">Successful!</span>
               </h1>
 
-              <div className="bg-dark-navy/50 border-2 border-primary-yellow/30 rounded-lg p-8 mb-8">
+              <div className="bg-dark-navy/50 border-2 border-primary-red/30 rounded-lg p-8 mb-8">
                 <p className="text-xl text-white/90 font-body mb-6 leading-relaxed">
                   Thank you for your booking! Your payment has been processed successfully.
                 </p>
@@ -65,8 +65,8 @@ export default function BookingSuccess() {
                 </p>
 
                 {sessionId && (
-                  <div className="bg-primary-yellow/10 border border-primary-yellow/30 rounded-lg p-4 mt-6">
-                    <p className="text-primary-yellow font-display italic uppercase font-bold text-sm mb-2">
+                  <div className="bg-primary-red/10 border border-primary-red/30 rounded-lg p-4 mt-6">
+                    <p className="text-primary-red font-display italic uppercase font-bold text-sm mb-2">
                       Payment Reference
                     </p>
                     <p className="text-white/60 font-body text-xs break-all">

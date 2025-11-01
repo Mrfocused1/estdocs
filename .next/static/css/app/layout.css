@@ -937,6 +937,9 @@ video {
 .flex-col {
   flex-direction: column;
 }
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -2322,8 +2325,20 @@ input[type="date"]::-moz-calendar-picker-indicator {
 
 @media (min-width: 640px) {
 
+  .sm\:w-auto {
+    width: auto;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:gap-6 {
+    gap: 1.5rem;
   }
 }
 

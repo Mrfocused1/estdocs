@@ -70,12 +70,12 @@ export default function About() {
                   <source src={videoUrl} type="video/mp4" />
                 </video>
               ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/30 to-dark-navy flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-red/30 to-dark-navy flex items-center justify-center">
                   <div className="text-center p-8">
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                      className="w-32 h-32 border-8 border-primary-yellow border-t-transparent rounded-full mx-auto mb-6"
+                      className="w-32 h-32 border-8 border-primary-red border-t-transparent rounded-full mx-auto mb-6"
                     />
                     <p className="text-white/70 font-body text-lg">
                       Loading...
@@ -83,7 +83,7 @@ export default function About() {
                   </div>
                 </div>
               )}
-              <div className="absolute inset-0 border-2 border-primary-yellow/30 rounded-card"></div>
+              <div className="absolute inset-0 border-2 border-primary-red/30 rounded-card"></div>
             </motion.div>
 
             {/* Right: Content */}
@@ -95,7 +95,7 @@ export default function About() {
             >
               <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap leading-tight justify-center lg:justify-start">
                 <span>We're</span>
-                <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+                <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
                   {titleVideoUrl ? (
                     <video
                       autoPlay
@@ -107,10 +107,10 @@ export default function About() {
                       <source src={titleVideoUrl} type="video/mp4" />
                     </video>
                   ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
                   )}
                 </span>
-                <span className="text-primary-yellow">EastDocs</span>
+                <span className="text-primary-red">EastDocs</span>
               </h1>
               <p className="text-xl text-white/80 font-body mb-6 leading-relaxed">
                 Where content creators, artists, and brands bring stories to

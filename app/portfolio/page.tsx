@@ -44,7 +44,7 @@ export default function Portfolio() {
           >
             <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap justify-center leading-tight">
               <span>Our</span>
-              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
                 {videoUrl ? (
                   <video
                     autoPlay
@@ -56,10 +56,10 @@ export default function Portfolio() {
                     <source src={videoUrl} type="video/mp4" />
                   </video>
                 ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
                 )}
               </span>
-              <span className="text-primary-yellow">Portfolio</span>
+              <span className="text-primary-red">Portfolio</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 font-body">
               Discover the amazing content created at EastDocs Studios. From

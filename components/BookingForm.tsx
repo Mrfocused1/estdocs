@@ -228,9 +228,9 @@ const BookingForm = () => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-primary-yellow/20 border-2 border-primary-yellow rounded-lg p-4 mb-6"
+                className="bg-primary-red/20 border-2 border-primary-red rounded-lg p-4 mb-6"
               >
-                <p className="text-primary-yellow font-body text-sm">
+                <p className="text-primary-red font-body text-sm">
                   ✓ Signed in as <strong>{user.email}</strong>
                 </p>
               </motion.div>
@@ -238,7 +238,7 @@ const BookingForm = () => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-dark-navy/50 border-2 border-primary-yellow/30 rounded-lg p-6 mb-6"
+                className="bg-dark-navy/50 border-2 border-primary-red/30 rounded-lg p-6 mb-6"
               >
                 <p className="text-white font-body text-sm mb-4">
                   Sign in to your account for faster booking, or continue as a guest.
@@ -256,14 +256,14 @@ const BookingForm = () => {
 
             {/* Animated Progress Bar */}
             <div className="mb-12">
-              <div className="w-full h-3 bg-dark-navy/50 rounded-full overflow-hidden border-2 border-primary-yellow/20">
+              <div className="w-full h-3 bg-dark-navy/50 rounded-full overflow-hidden border-2 border-primary-red/20">
                 <motion.div
                   initial={{ width: "0%" }}
                   animate={{
                     width: `${(currentStep / totalSteps) * 100}%`,
                   }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="h-full bg-primary-yellow relative"
+                  className="h-full bg-primary-red relative"
                 >
                   {/* Pulsing glow effect */}
                   <motion.div
@@ -276,7 +276,7 @@ const BookingForm = () => {
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="absolute inset-0 bg-primary-yellow shadow-lg shadow-primary-yellow/50"
+                    className="absolute inset-0 bg-primary-red shadow-lg shadow-primary-red/50"
                   />
                 </motion.div>
               </div>
@@ -284,7 +284,7 @@ const BookingForm = () => {
                 <p className="text-sm font-display italic uppercase font-bold text-white/60">
                   Step {currentStep} of {totalSteps}
                 </p>
-                <p className="text-sm font-display italic uppercase font-bold text-primary-yellow">
+                <p className="text-sm font-display italic uppercase font-bold text-primary-red">
                   {stepTitles[currentStep - 1]}
                 </p>
               </div>
@@ -301,13 +301,13 @@ const BookingForm = () => {
               {/* Step 1: Personal Information */}
               {currentStep === 1 && (
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-6">
+                  <h3 className="text-2xl font-display italic uppercase text-primary-red mb-6">
                     Tell us about yourself
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Field */}
               <div className="relative">
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Full Name *
                 </label>
                 <motion.input
@@ -318,8 +318,8 @@ const BookingForm = () => {
                   onChange={handleChange}
                   placeholder=""
                   className={`w-full bg-dark-navy/50 border-3 ${
-                    errors.name ? "border-red-500" : "border-primary-yellow/30"
-                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50`}
+                    errors.name ? "border-red-500" : "border-primary-red/30"
+                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50`}
                 />
                 {errors.name && (
                   <motion.p
@@ -334,7 +334,7 @@ const BookingForm = () => {
 
               {/* Email Field */}
               <div className="relative">
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Email Address *
                 </label>
                 <motion.input
@@ -345,8 +345,8 @@ const BookingForm = () => {
                   onChange={handleChange}
                   placeholder=""
                   className={`w-full bg-dark-navy/50 border-3 ${
-                    errors.email ? "border-red-500" : "border-primary-yellow/30"
-                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50`}
+                    errors.email ? "border-red-500" : "border-primary-red/30"
+                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50`}
                 />
                 {errors.email && (
                   <motion.p
@@ -361,7 +361,7 @@ const BookingForm = () => {
 
               {/* Phone Field */}
               <div className="relative">
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Phone Number *
                 </label>
                 <motion.input
@@ -372,8 +372,8 @@ const BookingForm = () => {
                   onChange={handleChange}
                   placeholder=""
                   className={`w-full bg-dark-navy/50 border-3 ${
-                    errors.phone ? "border-red-500" : "border-primary-yellow/30"
-                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50`}
+                    errors.phone ? "border-red-500" : "border-primary-red/30"
+                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50`}
                 />
                 {errors.phone && (
                   <motion.p
@@ -388,7 +388,7 @@ const BookingForm = () => {
 
               {/* Date Field */}
               <div className="relative">
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Preferred Date *
                 </label>
                 <CustomDatePicker
@@ -410,11 +410,11 @@ const BookingForm = () => {
         {/* Step 2: Package Selection */}
         {currentStep === 2 && (
           <div className="space-y-6">
-            <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-6">
+            <h3 className="text-2xl font-display italic uppercase text-primary-red mb-6">
               Choose your package
             </h3>
             <div>
-              <h3 className="text-xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-xl font-display italic uppercase text-primary-red mb-4">
                 Select Package *
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -425,8 +425,8 @@ const BookingForm = () => {
                     whileTap={{ scale: 0.98 }}
                     className={`cursor-pointer p-6 rounded-lg border-3 transition-all duration-300 ${
                       formData.package === pkg.value
-                        ? "border-primary-yellow bg-primary-yellow/20 shadow-lg shadow-primary-yellow/20"
-                        : "border-primary-yellow/30 bg-dark-navy/50 hover:border-primary-yellow/60 hover:bg-primary-yellow/10"
+                        ? "border-primary-red bg-primary-red/20 shadow-lg shadow-primary-red/20"
+                        : "border-primary-red/30 bg-dark-navy/50 hover:border-primary-red/60 hover:bg-primary-red/10"
                     }`}
                   >
                     <input
@@ -440,7 +440,7 @@ const BookingForm = () => {
                     <span className="text-white font-display italic uppercase font-bold text-base block mb-2">
                       {pkg.label}
                     </span>
-                    <span className="text-primary-yellow font-display italic font-bold text-lg">
+                    <span className="text-primary-red font-display italic font-bold text-lg">
                       £{pkg.price}/hr
                     </span>
                   </motion.label>
@@ -459,12 +459,12 @@ const BookingForm = () => {
 
             {/* Duration */}
             <div>
-              <label className="text-primary-yellow font-display italic uppercase font-bold mb-3 block">Duration</label>
+              <label className="text-primary-red font-display italic uppercase font-bold mb-3 block">Duration</label>
               <select
                 name="duration"
                 value={formData.duration}
                 onChange={handleChange}
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50 cursor-pointer"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50 cursor-pointer"
               >
                 {durations.map((duration) => (
                   <option key={duration.value} value={duration.value} className="bg-dark-navy font-display italic uppercase font-bold">
@@ -479,18 +479,18 @@ const BookingForm = () => {
         {/* Step 3: Project Type & Extras */}
         {currentStep === 3 && (
           <div className="space-y-6">
-            <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-6">
+            <h3 className="text-2xl font-display italic uppercase text-primary-red mb-6">
               Project details
             </h3>
             <div>
-                <label className="text-primary-yellow font-display italic uppercase font-bold mb-3 block">Project Type *</label>
+                <label className="text-primary-red font-display italic uppercase font-bold mb-3 block">Project Type *</label>
                 <select
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleChange}
                   className={`w-full bg-dark-navy/50 border-3 ${
-                    errors.projectType ? "border-red-500" : "border-primary-yellow/30"
-                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50 cursor-pointer`}
+                    errors.projectType ? "border-red-500" : "border-primary-red/30"
+                  } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50 cursor-pointer`}
                 >
                   <option value="" className="bg-dark-navy font-display italic uppercase font-bold">Select project type</option>
                   {projectTypes.map((type) => (
@@ -512,7 +512,7 @@ const BookingForm = () => {
 
             {/* Extras */}
             <div>
-              <h3 className="text-xl font-display italic uppercase text-primary-yellow mb-4">
+              <h3 className="text-xl font-display italic uppercase text-primary-red mb-4">
                 Additional Extras (Optional)
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -523,20 +523,20 @@ const BookingForm = () => {
                     whileTap={{ scale: 0.98 }}
                     className={`cursor-pointer p-5 rounded-lg border-3 transition-all duration-300 flex items-center gap-4 ${
                       formData.extras.includes(extra.value)
-                        ? "border-primary-yellow bg-primary-yellow/20 shadow-lg shadow-primary-yellow/20"
-                        : "border-primary-yellow/30 bg-dark-navy/50 hover:border-primary-yellow/60 hover:bg-primary-yellow/10"
+                        ? "border-primary-red bg-primary-red/20 shadow-lg shadow-primary-red/20"
+                        : "border-primary-red/30 bg-dark-navy/50 hover:border-primary-red/60 hover:bg-primary-red/10"
                     }`}
                   >
                     <input
                       type="checkbox"
                       checked={formData.extras.includes(extra.value)}
                       onChange={() => handleExtrasChange(extra.value)}
-                      className="w-6 h-6 accent-primary-yellow rounded border-2 border-primary-yellow"
+                      className="w-6 h-6 accent-primary-red rounded border-2 border-primary-red"
                     />
                     <span className="text-white font-display italic uppercase font-bold text-sm flex-1">
                       {extra.label}
                     </span>
-                    <span className="text-primary-yellow font-display italic font-bold text-sm ml-auto">
+                    <span className="text-primary-red font-display italic font-bold text-sm ml-auto">
                       +£{extra.price}{extra.perHour ? "/hr" : ""}
                     </span>
                   </motion.label>
@@ -549,12 +549,12 @@ const BookingForm = () => {
         {/* Step 4: Notes & Review */}
         {currentStep === 4 && (
           <div className="space-y-6">
-            <h3 className="text-2xl font-display italic uppercase text-primary-yellow mb-6">
+            <h3 className="text-2xl font-display italic uppercase text-primary-red mb-6">
               Final details
             </h3>
             {/* Notes */}
             <div className="relative">
-              <label className="text-primary-yellow font-display italic uppercase font-bold mb-3 block">Additional Notes</label>
+              <label className="text-primary-red font-display italic uppercase font-bold mb-3 block">Additional Notes</label>
               <motion.textarea
                 whileFocus={{ scale: 1.01 }}
                 name="notes"
@@ -562,58 +562,58 @@ const BookingForm = () => {
                 onChange={handleChange}
                 rows={5}
                 placeholder="Tell us about your project, special requirements, or any questions..."
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-base focus:border-primary-yellow focus:outline-none transition-all duration-300 resize-none hover:border-primary-yellow/50 placeholder:text-white/30 placeholder:font-display placeholder:italic placeholder:uppercase"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-base focus:border-primary-red focus:outline-none transition-all duration-300 resize-none hover:border-primary-red/50 placeholder:text-white/30 placeholder:font-display placeholder:italic placeholder:uppercase"
               />
             </div>
 
             {/* Booking Summary */}
-            <div className="bg-dark-navy/50 rounded-lg p-8 border-3 border-primary-yellow/40 shadow-xl shadow-primary-yellow/10">
-              <h4 className="text-2xl font-display italic uppercase text-primary-yellow mb-6">
+            <div className="bg-dark-navy/50 rounded-lg p-8 border-3 border-primary-red/40 shadow-xl shadow-primary-red/10">
+              <h4 className="text-2xl font-display italic uppercase text-primary-red mb-6">
                 Booking Summary
               </h4>
               <div className="space-y-4 text-white font-display italic uppercase">
-                <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                  <span className="text-primary-yellow/80 font-bold">Name:</span>
+                <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                  <span className="text-primary-red/80 font-bold">Name:</span>
                   <span className="text-white font-bold text-lg">{formData.name || "-"}</span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                  <span className="text-primary-yellow/80 font-bold">Email:</span>
+                <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                  <span className="text-primary-red/80 font-bold">Email:</span>
                   <span className="text-white font-bold">{formData.email || "-"}</span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                  <span className="text-primary-yellow/80 font-bold">Date:</span>
+                <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                  <span className="text-primary-red/80 font-bold">Date:</span>
                   <span className="text-white font-bold">{formData.date || "-"}</span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                  <span className="text-primary-yellow/80 font-bold">Package:</span>
+                <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                  <span className="text-primary-red/80 font-bold">Package:</span>
                   <span className="text-white font-bold text-right">
                     {packages.find(p => p.value === formData.package)?.label || "-"}
                   </span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                  <span className="text-primary-yellow/80 font-bold">Duration:</span>
+                <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                  <span className="text-primary-red/80 font-bold">Duration:</span>
                   <span className="text-white font-bold">
                     {durations.find(d => d.value === formData.duration)?.label || "-"}
                   </span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                  <span className="text-primary-yellow/80 font-bold">Project Type:</span>
+                <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                  <span className="text-primary-red/80 font-bold">Project Type:</span>
                   <span className="text-white font-bold">
                     {projectTypes.find(t => t.value === formData.projectType)?.label || "-"}
                   </span>
                 </div>
                 {formData.extras.length > 0 && (
-                  <div className="flex justify-between items-center pb-3 border-b border-primary-yellow/20">
-                    <span className="text-primary-yellow/80 font-bold">Extras:</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-primary-red/20">
+                    <span className="text-primary-red/80 font-bold">Extras:</span>
                     <span className="text-white font-bold text-right text-sm">
                       {formData.extras.map(e => extras.find(ex => ex.value === e)?.label).join(", ")}
                     </span>
                   </div>
                 )}
                 {/* Total Price */}
-                <div className="flex justify-between items-center pt-4 mt-4 border-t-2 border-primary-yellow">
-                  <span className="text-primary-yellow font-bold text-xl">Total:</span>
-                  <span className="text-primary-yellow font-bold text-3xl">
+                <div className="flex justify-between items-center pt-4 mt-4 border-t-2 border-primary-red">
+                  <span className="text-primary-red font-bold text-xl">Total:</span>
+                  <span className="text-primary-red font-bold text-3xl">
                     £{calculateTotal()}
                   </span>
                 </div>
@@ -624,7 +624,7 @@ const BookingForm = () => {
       </motion.div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between items-center mt-8 pt-8 border-t border-white/10">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between items-center mt-8 pt-8 border-t border-white/10 gap-4">
         {currentStep > 1 && (
           <motion.button
             onClick={prevStep}
@@ -637,14 +637,14 @@ const BookingForm = () => {
           </motion.button>
         )}
 
-        <div className="flex-1" />
+        
 
         {currentStep < totalSteps ? (
           <motion.button
             onClick={nextStep}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 bg-primary-yellow text-accent-black px-8 py-3 rounded-button font-display uppercase font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-primary-yellow/30"
+            className="flex items-center gap-2 bg-primary-red text-accent-black px-8 py-3 rounded-button font-display uppercase font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-primary-red/30"
           >
             <span>Next</span>
             <FaArrowRight />
@@ -655,7 +655,7 @@ const BookingForm = () => {
             disabled={isSubmitting}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary-yellow text-accent-black px-8 py-4 rounded-button font-display font-bold text-xl uppercase hover:bg-yellow-400 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-2xl shadow-primary-yellow/30"
+            className="bg-primary-red text-accent-black px-8 py-4 rounded-button font-display font-bold hover:bg-primary-red/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-2xl shadow-primary-red/30"
           >
             {isSubmitting ? (
               <>
@@ -687,9 +687,9 @@ const BookingForm = () => {
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="inline-block mb-6"
             >
-              <FaCheckCircle className="text-8xl text-primary-yellow" />
+              <FaCheckCircle className="text-8xl text-primary-red" />
             </motion.div>
-            <h3 className="text-4xl font-display italic uppercase text-primary-yellow mb-4">
+            <h3 className="text-4xl font-display italic uppercase text-primary-red mb-4">
               Booking Submitted!
             </h3>
             <p className="text-xl text-white/80 font-body max-w-lg mx-auto">

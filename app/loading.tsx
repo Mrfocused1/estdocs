@@ -16,7 +16,7 @@ export default function Loading() {
             repeatType: "reverse",
             ease: "easeInOut",
           }}
-          className="text-5xl md:text-7xl font-display italic uppercase text-primary-yellow mb-8"
+          className="text-5xl md:text-7xl font-display italic uppercase text-primary-red mb-8"
         >
           EastDocs
         </motion.h1>
@@ -34,7 +34,7 @@ export default function Loading() {
                 delay: index * 0.15,
                 ease: "easeInOut",
               }}
-              className="w-3 h-3 bg-primary-yellow rounded-full"
+              className="w-3 h-3 bg-primary-red rounded-full"
             />
           ))}
         </div>

@@ -44,7 +44,7 @@ const Footer = () => {
           <div>
             <motion.h3
               whileHover={{ scale: 1.05 }}
-              className="text-3xl font-display italic uppercase text-primary-yellow mb-4"
+              className="text-3xl font-display italic uppercase text-primary-red mb-4"
             >
               {content.companyName}
             </motion.h3>
@@ -61,7 +61,7 @@ const Footer = () => {
                   aria-label={social.label}
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary-yellow hover:text-accent-black transition-all duration-300"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-primary-red hover:text-accent-black transition-all duration-300"
                 >
                   <social.icon className="text-lg" />
                 </motion.a>
@@ -83,7 +83,7 @@ const Footer = () => {
                 >
                   <Link
                     href={link.href}
-                    className="text-white/70 hover:text-primary-yellow transition-colors duration-300 font-display italic uppercase font-bold"
+                    className="text-white/70 hover:text-primary-red transition-colors duration-300 font-display italic uppercase font-bold"
                   >
                     {link.name}
                   </Link>
@@ -99,28 +99,28 @@ const Footer = () => {
             </h4>
             <div className="space-y-3 text-white/70 font-body">
               <p>
-                <span className="text-primary-yellow">Address:</span>
+                <span className="text-primary-red">Address:</span>
                 <br />
                 {content.address.line1}
                 <br />
                 {content.address.city}, {content.address.postcode}
               </p>
               <p>
-                <span className="text-primary-yellow">Email:</span>
+                <span className="text-primary-red">Email:</span>
                 <br />
                 <a
                   href={`mailto:${content.email}`}
-                  className="hover:text-primary-yellow transition-colors duration-300"
+                  className="hover:text-primary-red transition-colors duration-300"
                 >
                   {content.email}
                 </a>
               </p>
               <p>
-                <span className="text-primary-yellow">Phone:</span>
+                <span className="text-primary-red">Phone:</span>
                 <br />
                 <a
                   href={`tel:${content.phone.replace(/\s/g, '')}`}
-                  className="hover:text-primary-yellow transition-colors duration-300"
+                  className="hover:text-primary-red transition-colors duration-300"
                 >
                   {content.phone}
                 </a>
@@ -138,13 +138,13 @@ const Footer = () => {
             <div className="flex space-x-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-white/60 hover:text-primary-yellow transition-colors duration-300"
+                className="text-white/60 hover:text-primary-red transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-white/60 hover:text-primary-yellow transition-colors duration-300"
+                className="text-white/60 hover:text-primary-red transition-colors duration-300"
               >
                 Terms of Service
               </Link>

@@ -32,7 +32,7 @@ const FeatureCards = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-display italic uppercase text-dark-navy mb-4">
-            {content.homepage.featuresTitle.split(' ').slice(0, -1).join(' ')} <span className="text-primary-yellow">{content.homepage.featuresTitle.split(' ').slice(-1)}</span>
+            {content.homepage.featuresTitle.split(' ').slice(0, -1).join(' ')} <span className="text-primary-red">{content.homepage.featuresTitle.split(' ').slice(-1)}</span>
           </h2>
           <p className="text-lg font-body max-w-2xl mx-auto text-dark-navy">
             {content.homepage.featuresSubtitle}
@@ -62,7 +62,7 @@ const FeatureCards = () => {
                 scale: 1.02,
                 transition: { duration: 0.3 },
               }}
-              className="group relative cursor-pointer bg-gray-50 rounded-card overflow-hidden border border-gray-200 hover:border-primary-yellow transition-all duration-300 hover:shadow-xl"
+              className="group relative cursor-pointer bg-gray-50 rounded-card overflow-hidden border border-gray-200 hover:border-primary-red transition-all duration-300 hover:shadow-xl"
               style={{
                 backgroundColor: '#fafafa',
               }}
@@ -82,7 +82,7 @@ const FeatureCards = () => {
               {/* Content wrapper */}
               <div className="px-10 pb-10">
                 {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-display italic uppercase text-dark-navy mb-4 group-hover:text-primary-yellow transition-colors duration-300">
+                <h3 className="text-2xl md:text-3xl font-display italic uppercase text-dark-navy mb-4 group-hover:text-primary-red transition-colors duration-300">
                   {feature.title}
                 </h3>
 
@@ -94,7 +94,7 @@ const FeatureCards = () => {
                 {/* Book Now Button */}
                 <Link
                   href="/booking"
-                  className="inline-block bg-primary-yellow text-accent-black px-6 py-3 rounded-lg font-display uppercase font-bold text-sm hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-primary-yellow/50"
+                  className="inline-block bg-primary-red text-accent-black px-6 py-3 rounded-lg font-display uppercase font-bold text-sm hover:bg-primary-red/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary-red/50"
                 >
                   Book Now
                 </Link>

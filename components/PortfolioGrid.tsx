@@ -79,16 +79,16 @@ const PortfolioGrid = () => {
     <section className="section-padding bg-dark-navy">
       <div className="container mx-auto px-6">
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex overflow-x-auto w-full gap-4 mb-12 px-4 py-2 scrollbar-hide">
           {categories.map((category) => (
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-button font-display italic uppercase font-bold transition-all duration-300 ${
+              className={`flex-shrink-0 px-6 py-3 rounded-button font-display italic uppercase font-bold transition-all duration-300 whitespace-nowrap ${
                 selectedCategory === category
-                  ? "bg-primary-yellow text-accent-black shadow-lg shadow-primary-yellow/50"
+                  ? "bg-primary-red text-accent-black shadow-lg shadow-primary-red/50"
                   : "bg-white/10 text-white hover:bg-white/20"
               }`}
             >
@@ -126,7 +126,7 @@ const PortfolioGrid = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-accent-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-primary-yellow text-accent-black px-3 py-1 rounded text-sm font-display uppercase font-bold">
+                <div className="absolute top-4 left-4 bg-primary-red text-accent-black px-3 py-1 rounded text-sm font-display uppercase font-bold">
                   {item.category}
                 </div>
 
@@ -134,7 +134,7 @@ const PortfolioGrid = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
                     whileHover={{ scale: 1.2 }}
-                    className="w-16 h-16 bg-primary-yellow rounded-full flex items-center justify-center shadow-2xl shadow-primary-yellow/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center shadow-2xl shadow-primary-red/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
                     <FaPlay className="text-2xl text-accent-black ml-1" />
                   </motion.div>
@@ -148,7 +148,7 @@ const PortfolioGrid = () => {
                 </div>
 
                 {/* Glow Effect */}
-                <div className="absolute inset-0 border-2 border-primary-yellow/0 group-hover:border-primary-yellow/50 rounded-card transition-all duration-300" />
+                <div className="absolute inset-0 border-2 border-primary-red/0 group-hover:border-primary-red/50 rounded-card transition-all duration-300" />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -176,7 +176,7 @@ const PortfolioGrid = () => {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 z-10 w-12 h-12 bg-primary-yellow text-accent-black rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                className="absolute top-4 right-4 z-10 w-12 h-12 bg-primary-red text-accent-black rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300"
               >
                 <FaTimes className="text-2xl" />
               </button>
@@ -184,7 +184,7 @@ const PortfolioGrid = () => {
               {/* Video Content */}
               <div className="aspect-video bg-gradient-to-br from-dark-navy to-accent-black flex items-center justify-center">
                 <div className="text-center">
-                  <FaPlay className="text-6xl text-primary-yellow mb-4 mx-auto" />
+                  <FaPlay className="text-6xl text-primary-red mb-4 mx-auto" />
                   <h3 className="text-2xl font-display italic uppercase text-white mb-2">
                     {selectedItem.title}
                   </h3>
@@ -201,7 +201,7 @@ const PortfolioGrid = () => {
                     <h4 className="text-xl font-display italic uppercase text-white mb-2">
                       {selectedItem.title}
                     </h4>
-                    <span className="inline-block bg-primary-yellow text-accent-black px-3 py-1 rounded text-sm font-display uppercase font-bold">
+                    <span className="inline-block bg-primary-red text-accent-black px-3 py-1 rounded text-sm font-display uppercase font-bold">
                       {selectedItem.category}
                     </span>
                   </div>

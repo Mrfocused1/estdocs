@@ -62,14 +62,14 @@ export const FileUpload = ({ label, accept, currentUrl, onUploadComplete, type =
 
   return (
     <div className="space-y-3">
-      <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+      <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
         {label}
       </label>
 
       <div className="flex items-start gap-4">
         {/* Preview */}
         {preview && (
-          <div className="flex-shrink-0 w-32 h-32 bg-dark-navy/50 border-2 border-primary-yellow/30 rounded-lg overflow-hidden">
+          <div className="flex-shrink-0 w-32 h-32 bg-dark-navy/50 border-2 border-primary-red/30 rounded-lg overflow-hidden">
             {type === "image" ? (
               <img
                 src={preview}
@@ -102,7 +102,7 @@ export const FileUpload = ({ label, accept, currentUrl, onUploadComplete, type =
             type="button"
             onClick={handleButtonClick}
             disabled={uploading}
-            className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {uploading ? (
               <>
@@ -127,12 +127,12 @@ export const FileUpload = ({ label, accept, currentUrl, onUploadComplete, type =
                 : "Supported: MP4, WebM, MOV, AVI (Max 50MB)"}
             </p>
             {type === "image" && (
-              <p className="text-primary-yellow/60 text-xs font-body italic">
+              <p className="text-primary-red/60 text-xs font-body italic">
                 Recommended: 1920x1080px or higher, high quality (90%+), optimized for web
               </p>
             )}
             {type === "video" && (
-              <p className="text-primary-yellow/60 text-xs font-body italic">
+              <p className="text-primary-red/60 text-xs font-body italic">
                 Recommended: 1920x1080px (Full HD) or 3840x2160px (4K), H.264 codec, 30fps
               </p>
             )}

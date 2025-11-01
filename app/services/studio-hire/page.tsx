@@ -96,8 +96,8 @@ export default function StudioHire() {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-dark-navy via-accent-black to-dark-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-primary-yellow rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-yellow rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-20 left-20 w-72 h-72 bg-primary-red rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-red rounded-full blur-3xl animate-pulse delay-1000" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -107,13 +107,13 @@ export default function StudioHire() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-5xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display italic uppercase text-white mb-6 leading-tight flex items-center gap-4 flex-wrap justify-center">
-              <span className="flex items-center gap-4">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display italic uppercase text-white mb-6 leading-tight flex items-center gap-3 flex-wrap justify-center">
+              <span className="flex items-center gap-3">
                 <span>Create</span>
                 <span>Exceptional</span>
               </span>
-              <span className="flex items-center gap-4">
-                <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+              <span className="flex items-center gap-3">
+                <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
                   {videoUrl ? (
                     <video
                       autoPlay
@@ -125,10 +125,10 @@ export default function StudioHire() {
                       <source src={videoUrl} type="video/mp4" />
                     </video>
                   ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
                   )}
                 </span>
-                <span className="text-primary-yellow">Content</span>
+                <span className="text-primary-red">Content</span>
               </span>
             </h1>
 
@@ -156,7 +156,7 @@ export default function StudioHire() {
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1, ease: "easeOut" }}
                   className="text-center"
                 >
-                  <div className="text-4xl md:text-5xl font-display italic uppercase text-primary-yellow mb-2">
+                  <div className="text-4xl md:text-5xl font-display italic uppercase text-primary-red mb-2">
                     {stat.number}
                   </div>
                   <div className="text-white/60 font-body text-sm uppercase tracking-wider">
@@ -180,7 +180,7 @@ export default function StudioHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Studio <span className="text-primary-yellow">Equipment</span>
+              Studio <span className="text-primary-red">Equipment</span>
             </h2>
             <p className="text-xl text-white/70 font-body max-w-3xl mx-auto">
               Every piece of equipment has been carefully selected to deliver broadcast-quality audio and cinematic video.
@@ -196,14 +196,14 @@ export default function StudioHire() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className="card hover:border-primary-yellow group"
+                className="card hover:border-primary-red group"
               >
-                <div className="inline-block mb-4 px-4 py-1 bg-primary-yellow/10 border border-primary-yellow/30 rounded-full">
-                  <span className="text-primary-yellow font-display italic uppercase text-xs font-bold">
+                <div className="inline-block mb-4 px-4 py-1 bg-primary-red/10 border border-primary-red/30 rounded-full">
+                  <span className="text-primary-red font-display italic uppercase text-xs font-bold">
                     {feature.specs}
                   </span>
                 </div>
-                <h3 className="text-xl font-display italic uppercase text-primary-yellow mb-3">
+                <h3 className="text-xl font-display italic uppercase text-primary-red mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-white/70 font-body text-sm leading-relaxed">
@@ -226,7 +226,7 @@ export default function StudioHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Choose Your <span className="text-primary-yellow">Package</span>
+              Choose Your <span className="text-primary-red">Package</span>
             </h2>
             <p className="text-xl text-white/70 font-body max-w-3xl mx-auto">
               From self-service to full production, we have a package that fits your needs and budget.
@@ -246,20 +246,20 @@ export default function StudioHire() {
                 onMouseLeave={() => setSelectedPackage(null)}
                 className={`card relative transition-all duration-300 ${
                   pkg.popular
-                    ? "border-primary-yellow shadow-2xl shadow-primary-yellow/20 lg:scale-105"
+                    ? "border-primary-red shadow-2xl shadow-primary-red/20 lg:scale-105"
                     : selectedPackage === index
-                    ? "border-primary-yellow"
+                    ? "border-primary-red"
                     : ""
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-yellow text-accent-black px-6 py-2 rounded-full font-display italic uppercase font-bold text-sm shadow-lg">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-red text-accent-black px-6 py-2 rounded-full font-display italic uppercase font-bold text-sm shadow-lg">
                     Most Popular
                   </div>
                 )}
 
                 <div className="text-center mb-6 mt-4">
-                  <h3 className="text-3xl font-display italic uppercase text-primary-yellow mb-3">
+                  <h3 className="text-3xl font-display italic uppercase text-primary-red mb-3">
                     {pkg.name}
                   </h3>
 
@@ -284,7 +284,7 @@ export default function StudioHire() {
                   <ul className="space-y-3 mb-6">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <span className="text-primary-yellow mr-3 mt-1 flex-shrink-0">✓</span>
+                        <span className="text-primary-red mr-3 mt-1 flex-shrink-0">✓</span>
                         <span className="text-white/70 font-body text-sm">{feature}</span>
                       </li>
                     ))}
@@ -297,8 +297,8 @@ export default function StudioHire() {
                   href="/booking"
                   className={`block text-center w-full py-4 rounded-lg font-display font-bold text-base uppercase transition-all duration-300 ${
                     pkg.popular
-                      ? "bg-primary-yellow text-accent-black hover:bg-yellow-400 shadow-lg shadow-primary-yellow/30"
-                      : "bg-white/10 text-white border-2 border-primary-yellow/30 hover:bg-primary-yellow hover:text-accent-black hover:border-primary-yellow"
+                      ? "bg-primary-red text-accent-black hover:bg-primary-red/90 shadow-lg shadow-primary-red/30"
+                      : "bg-white/10 text-white border-2 border-primary-red/30 hover:bg-primary-red hover:text-accent-black hover:border-primary-red"
                   }`}
                 >
                   Book Now
@@ -314,9 +314,9 @@ export default function StudioHire() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <div className="inline-block px-6 py-3 bg-primary-yellow/10 border border-primary-yellow/30 rounded-lg">
+            <div className="inline-block px-6 py-3 bg-primary-red/10 border border-primary-red/30 rounded-lg">
               <span className="text-white/70 font-body text-sm">
-                Minimum booking: <span className="text-primary-yellow font-bold">2 hours</span> • Discounts available for 4+ hour sessions
+                Minimum booking: <span className="text-primary-red font-bold">2 hours</span> • Discounts available for 4+ hour sessions
               </span>
             </div>
           </motion.div>
@@ -334,7 +334,7 @@ export default function StudioHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-dark-navy mb-6">
-              Enhance Your <span className="text-primary-yellow">Session</span>
+              Enhance Your <span className="text-primary-red">Session</span>
             </h2>
             <p className="text-xl text-dark-navy/70 font-body max-w-3xl mx-auto">
               Take your production to the next level with our professional add-ons and extras.
@@ -362,7 +362,7 @@ export default function StudioHire() {
                   scale: 1.02,
                   transition: { duration: 0.3 },
                 }}
-                className="group relative cursor-pointer bg-gray-50 rounded-card overflow-hidden border border-gray-200 hover:border-primary-yellow transition-all duration-300 hover:shadow-xl"
+                className="group relative cursor-pointer bg-gray-50 rounded-card overflow-hidden border border-gray-200 hover:border-primary-red transition-all duration-300 hover:shadow-xl"
                 style={{ backgroundColor: '#fafafa' }}
               >
                 {/* Image */}
@@ -380,10 +380,10 @@ export default function StudioHire() {
                 {/* Content wrapper */}
                 <div className="px-10 pb-10">
                   <div className="mb-6">
-                    <h3 className="text-2xl md:text-3xl font-display italic uppercase text-dark-navy mb-3 group-hover:text-primary-yellow transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl font-display italic uppercase text-dark-navy mb-3 group-hover:text-primary-red transition-colors duration-300">
                       {addon.name}
                     </h3>
-                    <span className="text-primary-yellow font-display italic font-bold text-3xl">
+                    <span className="text-primary-red font-display italic font-bold text-3xl">
                       {addon.price}
                     </span>
                   </div>
@@ -419,7 +419,7 @@ export default function StudioHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              How It <span className="text-primary-yellow">Works</span>
+              How It <span className="text-primary-red">Works</span>
             </h2>
             <p className="text-xl text-white/70 font-body max-w-3xl mx-auto">
               From booking to final delivery, we've streamlined the entire process.
@@ -437,11 +437,11 @@ export default function StudioHire() {
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="card hover:border-primary-yellow text-center">
-                  <div className="text-7xl font-display italic text-primary-yellow/20 mb-4">
+                <div className="card hover:border-primary-red text-center">
+                  <div className="text-7xl font-display italic text-primary-red/20 mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-display italic uppercase text-primary-yellow mb-3">
+                  <h3 className="text-xl font-display italic uppercase text-primary-red mb-3">
                     {step.title}
                   </h3>
                   <p className="text-white/70 font-body text-sm leading-relaxed">
@@ -451,7 +451,7 @@ export default function StudioHire() {
 
                 {/* Connector Line */}
                 {index < howItWorks.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-primary-yellow/30" />
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-primary-red/30" />
                 )}
               </motion.div>
             ))}
@@ -470,7 +470,7 @@ export default function StudioHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Frequently Asked <span className="text-primary-yellow">Questions</span>
+              Frequently Asked <span className="text-primary-red">Questions</span>
             </h2>
           </motion.div>
 
@@ -483,13 +483,13 @@ export default function StudioHire() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
-                className="card border-primary-yellow/20 overflow-hidden"
+                className="card border-primary-red/20 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                   className="w-full text-left flex items-center justify-between group"
                 >
-                  <h3 className="text-lg md:text-xl font-display italic uppercase text-primary-yellow group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-lg md:text-xl font-display italic uppercase text-primary-red group-hover:text-white transition-colors duration-300">
                     {faq.question}
                   </h3>
                   <motion.div
@@ -498,7 +498,7 @@ export default function StudioHire() {
                     className="flex-shrink-0 ml-4"
                   >
                     <svg
-                      className="w-6 h-6 text-primary-yellow"
+                      className="w-6 h-6 text-primary-red"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -522,7 +522,7 @@ export default function StudioHire() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="text-white/70 font-body text-sm md:text-base leading-relaxed pt-4 border-t border-primary-yellow/20 mt-4">
+                  <p className="text-white/70 font-body text-sm md:text-base leading-relaxed pt-4 border-t border-primary-red/20 mt-4">
                     {faq.answer}
                   </p>
                 </motion.div>
@@ -535,7 +535,7 @@ export default function StudioHire() {
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-dark-navy via-accent-black to-dark-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-yellow rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-red rounded-full blur-3xl animate-pulse" />
         </div>
 
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -546,7 +546,7 @@ export default function StudioHire() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-              Ready to Start <span className="text-primary-yellow">Creating?</span>
+              Ready to Start <span className="text-primary-red">Creating?</span>
             </h2>
             <p className="text-xl text-white/80 font-body mb-8 max-w-2xl mx-auto">
               Book your podcast studio session today and experience professional-quality recording in East London.

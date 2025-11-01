@@ -64,7 +64,7 @@ const Preloader = () => {
                   delay: 0.2,
                   ease: [0.6, 0.05, 0.01, 0.9],
                 }}
-                className="text-6xl md:text-8xl lg:text-9xl font-display italic uppercase text-primary-yellow font-bold leading-none whitespace-nowrap"
+                className="text-6xl md:text-8xl lg:text-9xl font-display italic uppercase text-primary-red font-bold leading-none whitespace-nowrap"
               >
                 EAST
               </motion.h1>

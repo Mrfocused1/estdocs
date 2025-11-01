@@ -5,6 +5,7 @@ import { useContent } from "@/contexts/ContentContext";
 import { motion } from "framer-motion";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { FileUpload } from "@/components/FileUpload";
+import Link from "next/link";
 
 export default function AdminDashboard() {
   const { content, updateContent, updateNestedContent, resetContent } = useContent();
@@ -22,6 +23,7 @@ export default function AdminDashboard() {
     { id: "live-streaming", label: "Live Streaming" },
     { id: "membership", label: "Membership" },
     { id: "about", label: "About Page" },
+    { id: "portfolio", label: "Portfolio" },
   ];
 
   const handleSave = async () => {
@@ -55,7 +57,7 @@ export default function AdminDashboard() {
           className="mb-12"
         >
           <h1 className="text-5xl md:text-6xl font-display italic uppercase text-white mb-4">
-            Admin <span className="text-primary-yellow">Dashboard</span>
+            Admin <span className="text-primary-red">Dashboard</span>
           </h1>
           <p className="text-white/70 font-body text-lg">
             Manage all content across your website. Changes are auto-saved to your browser.
@@ -68,9 +70,9 @@ export default function AdminDashboard() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mb-6 p-4 bg-primary-yellow/20 border border-primary-yellow rounded-lg"
+            className="mb-6 p-4 bg-primary-red/20 border border-primary-red rounded-lg"
           >
-            <p className="text-primary-yellow font-display italic uppercase font-bold">
+            <p className="text-primary-red font-display italic uppercase font-bold">
               {saveMessage}
             </p>
           </motion.div>
@@ -84,7 +86,7 @@ export default function AdminDashboard() {
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-3 rounded-lg font-display italic uppercase font-bold transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-primary-yellow text-accent-black"
+                  ? "bg-primary-red text-accent-black"
                   : "bg-white/5 text-white hover:bg-white/10"
               }`}
             >
@@ -104,20 +106,33 @@ export default function AdminDashboard() {
           {activeTab === "live-streaming" && <LiveStreamingTab content={content} updateNestedContent={updateNestedContent} />}
           {activeTab === "membership" && <MembershipTab content={content} updateNestedContent={updateNestedContent} />}
           {activeTab === "about" && <AboutTab content={content} updateContent={updateContent} />}
+          {activeTab === "portfolio" && (
+            <div className="text-center">
+              <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
+                Portfolio Management
+              </h2>
+              <p className="text-white/70 font-body mb-6">
+                The portfolio is now managed on its own dedicated page for a better experience.
+              </p>
+              <Link href="/admin/portfolio" className="btn-primary">
+                Go to Portfolio Page
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Action Buttons */}
         <div className="flex flex-col md:flex-row gap-3 md:gap-4 md:justify-end">
           <button
             onClick={handleReset}
-            className="w-full md:w-auto px-6 py-3 md:px-8 md:py-4 rounded-button border-2 border-primary-yellow/30 bg-white/10 text-white hover:bg-primary-yellow hover:text-accent-black hover:border-primary-yellow font-display italic uppercase font-bold text-sm md:text-base transition-all duration-300"
+            className="w-full md:w-auto px-6 py-3 md:px-8 md:py-4 rounded-button border-2 border-primary-red/30 bg-white/10 text-white hover:bg-primary-red hover:text-accent-black hover:border-primary-red font-display italic uppercase font-bold text-sm md:text-base transition-all duration-300"
           >
             Reset to Defaults
           </button>
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="w-full md:w-auto px-6 py-3 md:px-8 md:py-4 rounded-button bg-primary-yellow text-accent-black hover:bg-yellow-400 font-display italic uppercase font-bold text-sm md:text-base transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full md:w-auto px-6 py-3 md:px-8 md:py-4 rounded-button bg-primary-red text-accent-black hover:bg-primary-red/90 font-display italic uppercase font-bold text-sm md:text-base transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSaving ? (
               <>
@@ -137,7 +152,7 @@ export default function AdminDashboard() {
 // Input component for consistent styling
 const Input = ({ label, value, onChange, placeholder = "", type = "text" }: any) => (
   <div>
-    <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+    <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
       {label}
     </label>
     <input
@@ -145,21 +160,21 @@ const Input = ({ label, value, onChange, placeholder = "", type = "text" }: any)
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none"
+      className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none"
     />
   </div>
 );
 
 const Textarea = ({ label, value, onChange, rows = 3 }: any) => (
   <div>
-    <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+    <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
       {label}
     </label>
     <textarea
       value={value}
       onChange={(e) => onChange(e.target.value)}
       rows={rows}
-      className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none resize-none"
+      className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none resize-none"
     />
   </div>
 );
@@ -167,7 +182,7 @@ const Textarea = ({ label, value, onChange, rows = 3 }: any) => (
 // Company Info Tab
 const CompanyInfoTab = ({ content, updateContent }: any) => (
   <div className="space-y-6">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Company Information
     </h2>
     <Input
@@ -192,7 +207,7 @@ const CompanyInfoTab = ({ content, updateContent }: any) => (
 const ContactSocialTab = ({ content, updateContent }: any) => (
   <div className="space-y-8">
     <div>
-      <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+      <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
         Contact Information
       </h2>
       <div className="space-y-6">
@@ -213,23 +228,16 @@ const ContactSocialTab = ({ content, updateContent }: any) => (
           value={content.address.line1}
           onChange={(val: string) => updateContent({ address: { ...content.address, line1: val } })}
         />
-        <div className="grid grid-cols-2 gap-4">
-          <Input
-            label="City"
-            value={content.address.city}
-            onChange={(val: string) => updateContent({ address: { ...content.address, city: val } })}
-          />
-          <Input
-            label="Postcode"
-            value={content.address.postcode}
-            onChange={(val: string) => updateContent({ address: { ...content.address, postcode: val } })}
-          />
-        </div>
+        <Input
+          label="City"
+          value={content.address.city}
+          onChange={(val: string) => updateContent({ address: { ...content.address, city: val } })}
+        />
       </div>
     </div>
 
     <div>
-      <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+      <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
         Social Media Links
       </h2>
       <div className="space-y-6">
@@ -271,7 +279,7 @@ const ContactSocialTab = ({ content, updateContent }: any) => (
 // Hero Tab
 const HeroTab = ({ content, updateContent }: any) => (
   <div className="space-y-6">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Hero Section
     </h2>
     <Input
@@ -295,7 +303,7 @@ const HeroTab = ({ content, updateContent }: any) => (
 // Studio Hire Tab
 const StudioHireTab = ({ content, updateNestedContent }: any) => (
   <div className="space-y-8">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Studio Hire Page Content
     </h2>
 
@@ -325,7 +333,7 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
       />
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Add-on Images
       </h3>
@@ -347,15 +355,15 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Packages
       </h3>
       <div className="space-y-6">
         {content.studioHire.packages.map((pkg: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">Package {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">Package {index + 1}</h4>
               <button
                 onClick={() => {
                   const newPackages = content.studioHire.packages.filter((_: any, i: number) => i !== index);
@@ -406,7 +414,7 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
               rows={2}
             />
             <div>
-              <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+              <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                 Features (one per line)
               </label>
               <textarea
@@ -417,7 +425,7 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
                   updateNestedContent(['studioHire', 'packages'], newPackages);
                 }}
                 rows={6}
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-yellow focus:outline-none resize-none"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-red focus:outline-none resize-none"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -447,22 +455,22 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['studioHire', 'packages'], [...content.studioHire.packages, newPackage]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Package
         </button>
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Add-ons
       </h3>
       <div className="space-y-6">
         {content.studioHire.addons.map((addon: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">Add-on {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">Add-on {index + 1}</h4>
               <button
                 onClick={() => {
                   const newAddons = content.studioHire.addons.filter((_: any, i: number) => i !== index);
@@ -512,22 +520,22 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['studioHire', 'addons'], [...content.studioHire.addons, newAddon]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Add-on
         </button>
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         FAQs
       </h3>
       <div className="space-y-6">
         {content.studioHire.faqs.map((faq: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">FAQ {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">FAQ {index + 1}</h4>
               <button
                 onClick={() => {
                   const newFaqs = content.studioHire.faqs.filter((_: any, i: number) => i !== index);
@@ -567,7 +575,7 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['studioHire', 'faqs'], [...content.studioHire.faqs, newFaq]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add FAQ
         </button>
@@ -579,7 +587,7 @@ const StudioHireTab = ({ content, updateNestedContent }: any) => (
 // Editing Tab
 const EditingTab = ({ content, updateNestedContent }: any) => (
   <div className="space-y-8">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Editing Services Page Content
     </h2>
 
@@ -609,7 +617,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
       />
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Add-on Images
       </h3>
@@ -631,15 +639,15 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Packages
       </h3>
       <div className="space-y-6">
         {content.editing.packages.map((pkg: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">Package {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">Package {index + 1}</h4>
               <button
                 onClick={() => {
                   const newPackages = content.editing.packages.filter((_: any, i: number) => i !== index);
@@ -711,7 +719,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
               />
             </div>
             <div>
-              <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+              <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                 Features (one per line)
               </label>
               <textarea
@@ -722,7 +730,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
                   updateNestedContent(['editing', 'packages'], newPackages);
                 }}
                 rows={6}
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-yellow focus:outline-none resize-none"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-red focus:outline-none resize-none"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -754,22 +762,22 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['editing', 'packages'], [...content.editing.packages, newPackage]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Package
         </button>
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Add-ons
       </h3>
       <div className="space-y-6">
         {content.editing.addons.map((addon: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">Add-on {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">Add-on {index + 1}</h4>
               <button
                 onClick={() => {
                   const newAddons = content.editing.addons.filter((_: any, i: number) => i !== index);
@@ -819,7 +827,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
               }}
             />
             <div>
-              <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+              <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                 Features (one per line)
               </label>
               <textarea
@@ -830,7 +838,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
                   updateNestedContent(['editing', 'addons'], newAddons);
                 }}
                 rows={4}
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-yellow focus:outline-none resize-none"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-red focus:outline-none resize-none"
               />
             </div>
           </div>
@@ -846,7 +854,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['editing', 'addons'], [...content.editing.addons, newAddon]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Add-on
         </button>
@@ -858,7 +866,7 @@ const EditingTab = ({ content, updateNestedContent }: any) => (
 // Live Streaming Tab
 const LiveStreamingTab = ({ content, updateNestedContent }: any) => (
   <div className="space-y-8">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Live Streaming Page Content
     </h2>
 
@@ -888,15 +896,15 @@ const LiveStreamingTab = ({ content, updateNestedContent }: any) => (
       />
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Packages
       </h3>
       <div className="space-y-6">
         {content.liveStreaming.packages.map((pkg: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">Package {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">Package {index + 1}</h4>
               <button
                 onClick={() => {
                   const newPackages = content.liveStreaming.packages.filter((_: any, i: number) => i !== index);
@@ -937,7 +945,7 @@ const LiveStreamingTab = ({ content, updateNestedContent }: any) => (
               />
             </div>
             <div>
-              <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+              <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                 Features (one per line)
               </label>
               <textarea
@@ -948,7 +956,7 @@ const LiveStreamingTab = ({ content, updateNestedContent }: any) => (
                   updateNestedContent(['liveStreaming', 'packages'], newPackages);
                 }}
                 rows={6}
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-yellow focus:outline-none resize-none"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-red focus:outline-none resize-none"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -977,7 +985,7 @@ const LiveStreamingTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['liveStreaming', 'packages'], [...content.liveStreaming.packages, newPackage]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Package
         </button>
@@ -989,7 +997,7 @@ const LiveStreamingTab = ({ content, updateNestedContent }: any) => (
 // Membership Tab
 const MembershipTab = ({ content, updateNestedContent }: any) => (
   <div className="space-y-8">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Membership Page Content
     </h2>
 
@@ -1019,15 +1027,15 @@ const MembershipTab = ({ content, updateNestedContent }: any) => (
       />
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Membership Tiers
       </h3>
       <div className="space-y-6">
         {content.membership.tiers.map((tier: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="text-lg font-display italic uppercase text-primary-yellow">Tier {index + 1}</h4>
+              <h4 className="text-lg font-display italic uppercase text-primary-red">Tier {index + 1}</h4>
               <button
                 onClick={() => {
                   const newTiers = content.membership.tiers.filter((_: any, i: number) => i !== index);
@@ -1068,7 +1076,7 @@ const MembershipTab = ({ content, updateNestedContent }: any) => (
               />
             </div>
             <div>
-              <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+              <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                 Features (one per line)
               </label>
               <textarea
@@ -1079,7 +1087,7 @@ const MembershipTab = ({ content, updateNestedContent }: any) => (
                   updateNestedContent(['membership', 'tiers'], newTiers);
                 }}
                 rows={6}
-                className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-yellow focus:outline-none resize-none"
+                className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-body text-sm focus:border-primary-red focus:outline-none resize-none"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -1108,7 +1116,7 @@ const MembershipTab = ({ content, updateNestedContent }: any) => (
             };
             updateNestedContent(['membership', 'tiers'], [...content.membership.tiers, newTier]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Tier
         </button>
@@ -1120,7 +1128,7 @@ const MembershipTab = ({ content, updateNestedContent }: any) => (
 // Homepage Tab
 const HomepageTab = ({ content, updateNestedContent }: any) => (
   <div className="space-y-8">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       Homepage Content
     </h2>
 
@@ -1141,7 +1149,7 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
       />
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Features Section
       </h3>
@@ -1159,13 +1167,13 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
         />
       </div>
 
-      <h4 className="text-lg font-display italic uppercase text-primary-yellow mb-4">
+      <h4 className="text-lg font-display italic uppercase text-primary-red mb-4">
         Feature Cards
       </h4>
       <div className="space-y-6">
         {content.homepage.features.map((feature: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
-            <h5 className="text-md font-display italic uppercase text-primary-yellow">Feature {index + 1}</h5>
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
+            <h5 className="text-md font-display italic uppercase text-primary-red">Feature {index + 1}</h5>
             <Input
               label="Title"
               value={feature.title}
@@ -1201,7 +1209,7 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Showreel Section
       </h3>
@@ -1227,7 +1235,7 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         Stats Section
       </h3>
@@ -1245,14 +1253,14 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
         />
       </div>
 
-      <h4 className="text-lg font-display italic uppercase text-primary-yellow mb-4">
+      <h4 className="text-lg font-display italic uppercase text-primary-red mb-4">
         Statistics
       </h4>
       <div className="space-y-6">
         {content.homepage.stats.map((stat: any, index: number) => (
-          <div key={index} className="bg-dark-navy/30 border border-primary-yellow/20 rounded-lg p-6 space-y-4">
+          <div key={index} className="bg-dark-navy/30 border border-primary-red/20 rounded-lg p-6 space-y-4">
             <div className="flex justify-between items-center mb-2">
-              <h5 className="text-md font-display italic uppercase text-primary-yellow">Stat {index + 1}</h5>
+              <h5 className="text-md font-display italic uppercase text-primary-red">Stat {index + 1}</h5>
               <button
                 onClick={() => {
                   const newStats = content.homepage.stats.filter((_: any, i: number) => i !== index);
@@ -1300,14 +1308,14 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
             const newStat = { number: 100, suffix: "+", label: "New Stat" };
             updateNestedContent(['homepage', 'stats'], [...content.homepage.stats, newStat]);
           }}
-          className="w-full bg-primary-yellow/10 hover:bg-primary-yellow/20 border-2 border-primary-yellow/30 hover:border-primary-yellow rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
+          className="w-full bg-primary-red/10 hover:bg-primary-red/20 border-2 border-primary-red/30 hover:border-primary-red rounded-lg px-6 py-3 text-white font-display italic uppercase font-bold text-sm transition-all duration-300"
         >
           Add Stat
         </button>
       </div>
     </div>
 
-    <div className="border-t border-primary-yellow/20 pt-6">
+    <div className="border-t border-primary-red/20 pt-6">
       <h3 className="text-2xl font-display italic uppercase text-white mb-4">
         CTA Section
       </h3>
@@ -1336,7 +1344,7 @@ const HomepageTab = ({ content, updateNestedContent }: any) => (
 // About Tab
 const AboutTab = ({ content, updateContent }: any) => (
   <div className="space-y-6">
-    <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+    <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
       About Page
     </h2>
     <Input

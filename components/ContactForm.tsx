@@ -84,7 +84,7 @@ const ContactForm = () => {
         >
           {/* Name Field */}
           <div className="relative">
-            <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+            <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
               Your Name *
             </label>
             <motion.input
@@ -95,8 +95,8 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder=""
               className={`w-full bg-dark-navy/50 border-3 ${
-                errors.name ? "border-red-500" : "border-primary-yellow/30"
-              } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50`}
+                errors.name ? "border-red-500" : "border-primary-red/30"
+              } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50`}
             />
             {errors.name && (
               <motion.p
@@ -111,7 +111,7 @@ const ContactForm = () => {
 
           {/* Email Field */}
           <div className="relative">
-            <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+            <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
               Your Email *
             </label>
             <motion.input
@@ -122,8 +122,8 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder=""
               className={`w-full bg-dark-navy/50 border-3 ${
-                errors.email ? "border-red-500" : "border-primary-yellow/30"
-              } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50`}
+                errors.email ? "border-red-500" : "border-primary-red/30"
+              } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50`}
             />
             {errors.email && (
               <motion.p
@@ -138,7 +138,7 @@ const ContactForm = () => {
 
           {/* Message Field */}
           <div className="relative">
-            <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+            <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
               Your Message *
             </label>
             <motion.textarea
@@ -149,8 +149,8 @@ const ContactForm = () => {
               placeholder=""
               rows={6}
               className={`w-full bg-dark-navy/50 border-3 ${
-                errors.message ? "border-red-500" : "border-primary-yellow/30"
-              } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 resize-none hover:border-primary-yellow/50`}
+                errors.message ? "border-red-500" : "border-primary-red/30"
+              } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 resize-none hover:border-primary-red/50`}
             />
             {errors.message && (
               <motion.p
@@ -217,10 +217,10 @@ const ContactForm = () => {
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
           >
-            <FaCheckCircle className="text-8xl text-primary-yellow mx-auto mb-6" />
+            <FaCheckCircle className="text-8xl text-primary-red mx-auto mb-6" />
           </motion.div>
           <h3 className="text-4xl font-display italic uppercase text-white mb-4">
-            Message <span className="text-primary-yellow">Sent!</span>
+            Message <span className="text-primary-red">Sent!</span>
           </h3>
           <p className="text-xl text-white/80 font-body">
             Thanks for reaching out. We'll get back to you soon!

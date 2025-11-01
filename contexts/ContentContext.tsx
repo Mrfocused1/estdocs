@@ -159,14 +159,12 @@ const defaultContent: SiteContent = {
   email: "hello@eastdocs.studio",
   phone: "+44 20 1234 5678",
   address: {
-    line1: "123 Studio Lane",
-    line2: "",
-    city: "East London",
-    postcode: "E1 7AB",
+    line1: "30 Seagull Lane",
+    city: "London",
   },
 
   socialMedia: {
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/eastdockstudios/?igsh=bGY4bm9yM3lhZWEw",
     twitter: "https://twitter.com",
     youtube: "https://youtube.com",
     linkedin: "https://linkedin.com",

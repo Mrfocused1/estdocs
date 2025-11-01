@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
 import { useAuth } from "@/contexts/AuthContext";
-import { useContent } from "@/contexts/ContentContext";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const { user, signOut } = useAuth();
@@ -72,7 +72,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-dark-navy/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
@@ -80,14 +80,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <motion.h1
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl md:text-3xl font-display italic uppercase text-primary-yellow"
-            >
-              {content.companyName}
-            </motion.h1>
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -102,11 +95,11 @@ const Navbar = () => {
               >
                 <Link
                   href={link.href}
-                  className="text-white hover:text-primary-yellow transition-colors duration-300 font-display italic uppercase font-bold relative inline-block py-1 cursor-pointer"
+                  className="text-white hover:text-primary-red transition-colors duration-300 font-display italic uppercase font-bold relative inline-block py-1 cursor-pointer"
                 >
                   {link.name}
                   {/* Animated underline */}
-                  <span className="absolute -bottom-1 left-0 h-0.5 bg-primary-yellow w-0 group-hover:w-full transition-all duration-300 ease-out pointer-events-none" />
+                  <span className="absolute -bottom-1 left-0 h-0.5 bg-primary-red w-0 group-hover:w-full transition-all duration-300 ease-out pointer-events-none" />
                 </Link>
               </motion.div>
             ))}
@@ -120,9 +113,9 @@ const Navbar = () => {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button className="text-white hover:text-primary-yellow transition-colors duration-300 font-display italic uppercase font-bold relative text-base py-1 cursor-pointer">
+              <button className="text-white hover:text-primary-red transition-colors duration-300 font-display italic uppercase font-bold relative text-base py-1 cursor-pointer">
                 Services
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-yellow transition-all duration-300 ease-out pointer-events-none ${isServicesOpen ? 'w-full' : 'w-0'}`} />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-red transition-all duration-300 ease-out pointer-events-none ${isServicesOpen ? 'w-full' : 'w-0'}`} />
               </button>
 
               <AnimatePresence>
@@ -132,13 +125,13 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-dark-navy border-2 border-primary-yellow/30 rounded-lg shadow-2xl overflow-hidden z-50"
+                    className="absolute top-full left-0 mt-2 w-64 bg-dark-navy border-2 border-primary-red/30 rounded-lg shadow-2xl overflow-hidden z-50"
                   >
                     {servicesLinks.map((service, index) => (
                       <Link
                         key={service.name}
                         href={service.href}
-                        className="block px-6 py-3 text-white hover:bg-primary-yellow hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm border-b border-primary-yellow/10 last:border-b-0 cursor-pointer"
+                        className="block px-6 py-3 text-white hover:bg-primary-red hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm border-b border-primary-red/10 last:border-b-0 cursor-pointer"
                       >
                         {service.name}
                       </Link>
@@ -159,11 +152,11 @@ const Navbar = () => {
               >
                 <Link
                   href={link.href}
-                  className="text-white hover:text-primary-yellow transition-colors duration-300 font-display italic uppercase font-bold relative inline-block py-1 cursor-pointer"
+                  className="text-white hover:text-primary-red transition-colors duration-300 font-display italic uppercase font-bold relative inline-block py-1 cursor-pointer"
                 >
                   {link.name}
                   {/* Animated underline */}
-                  <span className="absolute -bottom-1 left-0 h-0.5 bg-primary-yellow w-0 group-hover:w-full transition-all duration-300 ease-out pointer-events-none" />
+                  <span className="absolute -bottom-1 left-0 h-0.5 bg-primary-red w-0 group-hover:w-full transition-all duration-300 ease-out pointer-events-none" />
                 </Link>
               </motion.div>
             ))}
@@ -176,7 +169,7 @@ const Navbar = () => {
             >
               <Link
                 href="/booking"
-                className="px-6 py-3 bg-primary-yellow text-accent-black rounded-lg font-display italic uppercase font-bold text-sm hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-primary-yellow/50"
+                className="px-6 py-3 bg-primary-red text-accent-black rounded-lg font-display italic uppercase font-bold text-sm hover:bg-primary-red/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary-red/50"
               >
                 Book
               </Link>
@@ -192,8 +185,8 @@ const Navbar = () => {
                 onMouseEnter={() => setIsUserMenuOpen(true)}
                 onMouseLeave={() => setIsUserMenuOpen(false)}
               >
-                <button className="text-white hover:text-primary-yellow transition-colors duration-300 relative text-xl flex items-center gap-2">
-                  <span className="w-10 h-10 bg-primary-yellow text-accent-black rounded-full flex items-center justify-center font-bold">
+                <button className="text-white hover:text-primary-red transition-colors duration-300 relative text-xl flex items-center gap-2">
+                  <span className="w-10 h-10 bg-primary-red text-accent-black rounded-full flex items-center justify-center font-bold">
                     {user.email?.[0].toUpperCase()}
                   </span>
                 </button>
@@ -205,11 +198,11 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full right-0 mt-2 w-48 bg-dark-navy border-2 border-primary-yellow/30 rounded-lg shadow-2xl overflow-hidden z-50"
+                      className="absolute top-full right-0 mt-2 w-48 bg-dark-navy border-2 border-primary-red/30 rounded-lg shadow-2xl overflow-hidden z-50"
                     >
                       <button
                         onClick={signOut}
-                        className="w-full text-left px-6 py-3 text-white hover:bg-primary-yellow hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm cursor-pointer"
+                        className="w-full text-left px-6 py-3 text-white hover:bg-primary-red hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm cursor-pointer"
                       >
                         Sign Out
                       </button>
@@ -226,7 +219,7 @@ const Navbar = () => {
                 onMouseEnter={() => setIsUserMenuOpen(true)}
                 onMouseLeave={() => setIsUserMenuOpen(false)}
               >
-                <button className="text-white hover:text-primary-yellow transition-colors duration-300 relative text-2xl">
+                <button className="text-white hover:text-primary-red transition-colors duration-300 relative text-2xl">
                   <FaUser />
                 </button>
 
@@ -237,17 +230,17 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full right-0 mt-2 w-48 bg-dark-navy border-2 border-primary-yellow/30 rounded-lg shadow-2xl overflow-hidden z-50"
+                      className="absolute top-full right-0 mt-2 w-48 bg-dark-navy border-2 border-primary-red/30 rounded-lg shadow-2xl overflow-hidden z-50"
                     >
                       <Link
                         href="/login"
-                        className="block px-6 py-3 text-white hover:bg-primary-yellow hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm border-b border-primary-yellow/10 cursor-pointer"
+                        className="block px-6 py-3 text-white hover:bg-primary-red hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm border-b border-primary-red/10 cursor-pointer"
                       >
                         Login
                       </Link>
                       <Link
                         href="/signup"
-                        className="block px-6 py-3 text-white hover:bg-primary-yellow hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm cursor-pointer"
+                        className="block px-6 py-3 text-white hover:bg-primary-red hover:text-accent-black transition-colors duration-300 font-display italic uppercase font-bold text-sm cursor-pointer"
                       >
                         Sign Up
                       </Link>
@@ -280,7 +273,7 @@ const Navbar = () => {
             className="md:hidden fixed inset-0 top-20 z-40"
             style={{ backgroundColor: '#152331' }}
           >
-            <div className="h-full flex flex-col items-center justify-center px-8 space-y-8">
+            <div className="h-full flex flex-col items-center justify-center px-8 space-y-6">
               {/* Home Link */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -291,7 +284,7 @@ const Navbar = () => {
                 <Link
                   href="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-white hover:text-primary-yellow transition-colors duration-300 text-3xl py-3 font-display italic uppercase font-bold"
+                  className="block text-white hover:text-primary-red transition-colors duration-300 text-2xl py-3 font-display italic uppercase font-bold"
                 >
                   Home
                 </Link>
@@ -299,7 +292,7 @@ const Navbar = () => {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.2, duration: 0.4 }}
-                  className="h-0.5 bg-primary-yellow/20 mt-2 origin-center"
+                  className="h-0.5 bg-primary-red/20 mt-2 origin-center"
                 />
               </motion.div>
 
@@ -312,7 +305,7 @@ const Navbar = () => {
               >
                 <button
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="block text-white hover:text-primary-yellow transition-colors duration-300 text-3xl py-3 font-display italic uppercase font-bold w-full"
+                  className="block text-white hover:text-primary-red transition-colors duration-300 text-2xl py-3 font-display italic uppercase font-bold w-full"
                 >
                   Services
                 </button>
@@ -320,7 +313,7 @@ const Navbar = () => {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.3, duration: 0.4 }}
-                  className="h-0.5 bg-primary-yellow/20 mt-2 origin-center"
+                  className="h-0.5 bg-primary-red/20 mt-2 origin-center"
                 />
 
                 <AnimatePresence>
@@ -337,7 +330,7 @@ const Navbar = () => {
                           key={service.name}
                           href={service.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block text-white/80 hover:text-primary-yellow transition-colors duration-300 text-xl py-2 font-display italic uppercase font-bold"
+                          className="block text-white/80 hover:text-primary-red transition-colors duration-300 text-lg py-2 font-display italic uppercase font-bold"
                         >
                           {service.name}
                         </Link>
@@ -359,7 +352,7 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-white hover:text-primary-yellow transition-colors duration-300 text-3xl py-3 font-display italic uppercase font-bold"
+                    className="block text-white hover:text-primary-red transition-colors duration-300 text-2xl py-3 font-display italic uppercase font-bold"
                   >
                     {link.name}
                   </Link>
@@ -367,7 +360,7 @@ const Navbar = () => {
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
-                    className="h-0.5 bg-primary-yellow/20 mt-2 origin-center"
+                    className="h-0.5 bg-primary-red/20 mt-2 origin-center"
                   />
                 </motion.div>
               ))}

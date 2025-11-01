@@ -47,7 +47,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-display italic uppercase text-white mb-6">
-            Our <span className="text-primary-yellow">Journey</span>
+            Our <span className="text-primary-red">Journey</span>
           </h2>
           <p className="text-xl text-white/80 font-body max-w-3xl mx-auto">
             From a small studio to London's premier content creation hub,
@@ -62,7 +62,7 @@ const AboutSection = () => {
             initial={{ height: 0 }}
             animate={isInView ? { height: "100%" } : { height: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute left-1/2 top-0 w-1 bg-primary-yellow/30 transform -translate-x-1/2 hidden md:block"
+            className="absolute left-1/2 top-0 w-1 bg-primary-red/30 transform -translate-x-1/2 hidden md:block"
           />
 
           {/* Milestones */}
@@ -92,7 +92,7 @@ const AboutSection = () => {
                     className="card inline-block w-full"
                   >
                     <div className="mb-2">
-                      <span className="text-3xl font-display italic uppercase text-primary-yellow">
+                      <span className="text-3xl font-display italic uppercase text-primary-red">
                         {milestone.year}
                       </span>
                     </div>
@@ -111,7 +111,7 @@ const AboutSection = () => {
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
-                    className="w-6 h-6 bg-primary-yellow rounded-full border-4 border-dark-navy relative z-10"
+                    className="w-6 h-6 bg-primary-red rounded-full border-4 border-dark-navy relative z-10"
                   />
                   <motion.div
                     animate={{
@@ -123,7 +123,7 @@ const AboutSection = () => {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="absolute inset-0 w-6 h-6 bg-primary-yellow rounded-full"
+                    className="absolute inset-0 w-6 h-6 bg-primary-red rounded-full"
                   />
                 </div>
 

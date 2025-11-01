@@ -33,8 +33,8 @@ const CustomDatePicker = forwardRef<HTMLDivElement, CustomDatePickerProps>(
           dateFormat="dd/MM/yyyy"
           placeholderText="Select a date"
           className={`w-full bg-dark-navy/50 border-3 ${
-            error ? "border-red-500" : "border-primary-yellow/30"
-          } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50 ${className}`}
+            error ? "border-red-500" : "border-primary-red/30"
+          } rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50 ${className}`}
           calendarClassName="custom-calendar"
           wrapperClassName="w-full"
           popperClassName="custom-calendar-popper"

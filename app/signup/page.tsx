@@ -58,7 +58,7 @@ export default function SignUp() {
               className="max-w-md mx-auto text-center"
             >
               <div className="text-8xl mb-6">✅</div>
-              <h2 className="text-4xl font-display italic uppercase text-primary-yellow mb-4">
+              <h2 className="text-4xl font-display italic uppercase text-primary-red mb-4">
                 Account Created!
               </h2>
               <p className="text-xl text-white/80 font-body mb-6">
@@ -82,7 +82,7 @@ export default function SignUp() {
             className="max-w-md mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-display italic uppercase text-white mb-6 text-center">
-              <span className="text-primary-yellow">Sign Up</span>
+              <span className="text-primary-red">Sign Up</span>
             </h1>
             <p className="text-lg text-white/70 font-body mb-8 text-center">
               Create an account to book faster next time
@@ -101,7 +101,7 @@ export default function SignUp() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Full Name */}
               <div>
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Full Name *
                 </label>
                 <input
@@ -109,13 +109,13 @@ export default function SignUp() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   required
-                  className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50"
+                  className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Email Address *
                 </label>
                 <input
@@ -123,13 +123,13 @@ export default function SignUp() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50"
+                  className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50"
                 />
               </div>
 
               {/* Password */}
               <div>
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Password *
                 </label>
                 <input
@@ -138,13 +138,13 @@ export default function SignUp() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50"
+                  className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50"
                 />
               </div>
 
               {/* Confirm Password */}
               <div>
-                <label className="text-sm text-primary-yellow bg-transparent mb-2 block font-display italic uppercase font-bold">
+                <label className="text-sm text-primary-red bg-transparent mb-2 block font-display italic uppercase font-bold">
                   Confirm Password *
                 </label>
                 <input
@@ -153,7 +153,7 @@ export default function SignUp() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full bg-dark-navy/50 border-3 border-primary-yellow/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-yellow focus:outline-none transition-all duration-300 hover:border-primary-yellow/50"
+                  className="w-full bg-dark-navy/50 border-3 border-primary-red/30 rounded-lg px-6 py-4 text-white font-display italic uppercase font-bold text-lg focus:border-primary-red focus:outline-none transition-all duration-300 hover:border-primary-red/50"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export default function SignUp() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-primary-yellow text-accent-black px-8 py-4 rounded-button font-display font-bold text-xl uppercase hover:bg-yellow-400 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary-red text-accent-black px-8 py-4 rounded-button font-display font-bold text-xl uppercase hover:bg-primary-red/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Creating Account..." : "Create Account"}
               </button>
@@ -171,13 +171,13 @@ export default function SignUp() {
             <div className="mt-8 text-center space-y-4">
               <p className="text-white/70 font-body">
                 Already have an account?{" "}
-                <Link href="/login" className="text-primary-yellow hover:underline font-bold">
+                <Link href="/login" className="text-primary-red hover:underline font-bold">
                   Login
                 </Link>
               </p>
               <p className="text-white/70 font-body">
                 Or{" "}
-                <Link href="/booking" className="text-primary-yellow hover:underline font-bold">
+                <Link href="/booking" className="text-primary-red hover:underline font-bold">
                   Continue as Guest
                 </Link>
               </p>

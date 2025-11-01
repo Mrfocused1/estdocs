@@ -40,7 +40,7 @@ const CTASection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="bg-gradient-to-br from-primary-yellow to-[#FFE600] p-12 md:p-16 rounded-card relative overflow-hidden group">
+          <div className="bg-gradient-to-br from-primary-red to-[#8F1A1B] p-12 md:p-16 rounded-card relative overflow-hidden group">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <motion.div
@@ -80,7 +80,7 @@ const CTASection = () => {
             >
               <Link
                 href="/booking"
-                className="inline-block bg-accent-black text-primary-yellow px-12 py-4 rounded-button font-display font-bold text-xl uppercase hover:bg-dark-navy hover:scale-105 transition-all duration-300 shadow-2xl"
+                className="inline-block bg-accent-black text-primary-red px-12 py-4 rounded-button font-display font-bold text-xl uppercase hover:bg-dark-navy hover:scale-105 transition-all duration-300 shadow-2xl"
               >
                 {content.homepage.ctaButtonText}
               </Link>

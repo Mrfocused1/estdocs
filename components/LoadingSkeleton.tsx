@@ -146,7 +146,7 @@ export const PackageCardSkeleton = () => (
 );
 
 export const AddonCardSkeleton = () => (
-  <div className="group relative cursor-pointer bg-dark-navy/80 rounded-card overflow-hidden border border-primary-yellow/20">
+  <div className="group relative cursor-pointer bg-dark-navy/80 rounded-card overflow-hidden border border-primary-red/20">
     <ImageSkeleton className="w-full h-48 rounded-t-card" />
     <div className="px-10 pb-10 pt-6">
       <div className="text-center mb-6">

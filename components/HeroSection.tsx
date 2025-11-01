@@ -202,7 +202,7 @@ const HeroSection = () => {
       {/* Animated Beams Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0"
+        className="fixed inset-0"
         style={{ filter: "blur(15px)" }}
       />
 
@@ -233,23 +233,15 @@ const HeroSection = () => {
           animate="visible"
           className="max-w-4xl mx-auto"
         >
-          {/* Line 1: The Creative Home */}
+          {/* Line 1: The Creative Home [VIDEO] of London's */}
           <motion.h1
             variants={wordVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 justify-center"
           >
             <span>The </span>
-            <span className="text-primary-yellow">Creative</span>
+            <span className="text-primary-red">Creative</span>
             <span> Home</span>
-          </motion.h1>
-
-          {/* Line 2: [VIDEO] of London's */}
-          <motion.h1
-            variants={wordVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
-          >
-            {/* Video Box 1 */}
-            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+            <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
               {videoUrl1 ? (
                 <video
                   autoPlay
@@ -261,20 +253,20 @@ const HeroSection = () => {
                   <source src={videoUrl1} type="video/mp4" />
                 </video>
               ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
               )}
             </span>
             <span>of London's</span>
           </motion.h1>
 
-          {/* Line 3: Boldest [VIDEO] Voices. */}
+          {/* Line 2: Boldest [VIDEO] Voices. */}
           <motion.h1
             variants={wordVariants}
             className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
           >
-            <span className="text-primary-yellow">Boldest</span>
+            <span className="text-primary-red">Boldest</span>
             {/* Video Box 2 */}
-            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+            <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
               {videoUrl2 ? (
                 <video
                   autoPlay
@@ -286,7 +278,7 @@ const HeroSection = () => {
                   <source src={videoUrl2} type="video/mp4" />
                 </video>
               ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
               )}
             </span>
             <span>Voices.</span>

@@ -18,7 +18,7 @@ export const LoadingSpinner = ({
   };
 
   const colorClasses = {
-    yellow: "border-primary-yellow border-t-transparent",
+    red: "border-primary-red border-t-transparent",
     white: "border-white border-t-transparent",
     black: "border-accent-black border-t-transparent",
   };
@@ -38,7 +38,7 @@ export const LoadingSpinner = ({
 
 export const LoadingDots = ({ color = "yellow" }: { color?: "yellow" | "white" }) => {
   const colorClasses = {
-    yellow: "bg-primary-yellow",
+    red: "bg-primary-red",
     white: "bg-white",
   };
 
@@ -74,7 +74,7 @@ export const PulseLoader = () => (
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="w-16 h-16 border-4 border-primary-yellow rounded-full"
+      className="w-16 h-16 border-4 border-primary-red rounded-full"
     />
   </div>
 );

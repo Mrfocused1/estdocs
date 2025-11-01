@@ -81,7 +81,7 @@ export default function Contact() {
           >
             <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap justify-center leading-tight">
               <span>Get</span>
-              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-yellow rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-yellow/20 to-dark-navy">
+              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
                 {videoUrl ? (
                   <video
                     autoPlay
@@ -93,11 +93,11 @@ export default function Contact() {
                     <source src={videoUrl} type="video/mp4" />
                   </video>
                 ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 via-transparent to-dark-navy/50"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
                 )}
               </span>
               <span>In</span>
-              <span className="text-primary-yellow">Touch</span>
+              <span className="text-primary-red">Touch</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 font-body">
               Have questions? Want to book a tour? We'd love to hear from you.
@@ -113,7 +113,7 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+                <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6">
                   Studio Information
                 </h2>
                 <p className="text-lg text-white/70 font-body mb-8">
@@ -128,7 +128,7 @@ export default function Contact() {
                 whileHover={{ x: 10 }}
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center flex-shrink-0">
                   <FaMapMarkerAlt className="text-2xl text-accent-black" />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ export default function Contact() {
                 whileHover={{ x: 10 }}
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center flex-shrink-0">
                   <FaEnvelope className="text-2xl text-accent-black" />
                 </div>
                 <div>
@@ -159,7 +159,7 @@ export default function Contact() {
                   </h3>
                   <a
                     href="mailto:hello@eastdocs.studio"
-                    className="text-white/70 font-body hover:text-primary-yellow transition-colors duration-300"
+                    className="text-white/70 font-body hover:text-primary-red transition-colors duration-300"
                   >
                     hello@eastdocs.studio
                   </a>
@@ -171,7 +171,7 @@ export default function Contact() {
                 whileHover={{ x: 10 }}
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center flex-shrink-0">
                   <FaPhone className="text-2xl text-accent-black" />
                 </div>
                 <div>
@@ -180,7 +180,7 @@ export default function Contact() {
                   </h3>
                   <a
                     href="tel:+442012345678"
-                    className="text-white/70 font-body hover:text-primary-yellow transition-colors duration-300"
+                    className="text-white/70 font-body hover:text-primary-red transition-colors duration-300"
                   >
                     +44 20 1234 5678
                   </a>
@@ -192,7 +192,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="aspect-video rounded-card overflow-hidden bg-gradient-to-br from-primary-yellow/20 to-dark-navy border-2 border-white/10 mt-8 relative"
+                className="aspect-video rounded-card overflow-hidden bg-gradient-to-br from-primary-red/20 to-dark-navy border-2 border-white/10 mt-8 relative"
               >
                 {mapImageUrl ? (
                   <img
@@ -201,11 +201,11 @@ export default function Contact() {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-primary-yellow/20 to-dark-navy" />
+                  <div className="w-full h-full bg-gradient-to-br from-primary-red/20 to-dark-navy" />
                 )}
                 <div className="absolute inset-0 flex items-center justify-center bg-dark-navy/60">
                   <div className="text-center">
-                    <FaMapMarkerAlt className="text-6xl text-primary-yellow mb-4 mx-auto" />
+                    <FaMapMarkerAlt className="text-6xl text-primary-red mb-4 mx-auto" />
                     <p className="text-white font-display italic uppercase text-lg">
                       Studio Location Map
                     </p>
@@ -224,7 +224,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="card">
-                <h2 className="text-3xl font-display italic uppercase text-primary-yellow mb-6">
+                <h2 className="text-3xl font-display italic uppercase text-primary-red mb-6 text-center">
                   Send Us a Message
                 </h2>
                 <ContactForm />
