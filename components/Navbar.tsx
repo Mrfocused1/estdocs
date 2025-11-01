@@ -271,43 +271,35 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed bg-dark-navy"
+            className="md:hidden"
             style={{
-              zIndex: 100000,
+              position: 'fixed',
               top: '80px',
               left: 0,
               right: 0,
               bottom: 0,
-              position: 'fixed',
-              backgroundColor: '#152331'
+              zIndex: 100000,
+              backgroundColor: '#152331',
+              overflow: 'auto'
             }}
           >
-            {/* Close button */}
-            <div className="flex justify-end p-4">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white text-2xl p-2"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="h-full w-full overflow-y-auto px-6 pb-6 bg-dark-navy">
-              <div className="space-y-3">
+            <div className="w-full h-full px-6 py-6" style={{ backgroundColor: '#152331' }}>
+              <div className="space-y-4">
                 {/* Home Link */}
                 <Link
                   href="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                  className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-xl border-2 border-white/10"
+                  style={{ backgroundColor: 'rgba(255, 241, 5, 0.1)' }}
                 >
                   Home
                 </Link>
 
                 {/* Services */}
-                <div className="bg-primary-red/10 rounded-lg overflow-hidden">
+                <div className="rounded-lg overflow-hidden border-2 border-white/10" style={{ backgroundColor: 'rgba(255, 241, 5, 0.1)' }}>
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="w-full flex items-center justify-between px-6 py-4 text-white font-display italic uppercase font-bold text-lg hover:bg-primary-red hover:text-accent-black transition-all"
+                    className="w-full flex items-center justify-between px-6 py-4 text-white font-display italic uppercase font-bold text-xl"
                   >
                     Services
                     <svg
@@ -321,13 +313,13 @@ const Navbar = () => {
                   </button>
 
                   {isMobileServicesOpen && (
-                    <div className="bg-white/5 px-4 py-2">
+                    <div className="bg-dark-navy px-4 py-2 space-y-2">
                       {servicesLinks.map((service) => (
                         <Link
                           key={service.name}
                           href={service.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block px-4 py-3 text-white/90 hover:text-primary-red hover:bg-white/5 rounded font-display italic uppercase font-bold text-base transition-all"
+                          className="block px-4 py-3 text-white hover:text-primary-red rounded font-display italic uppercase font-bold text-base"
                         >
                           • {service.name}
                         </Link>
@@ -340,7 +332,8 @@ const Navbar = () => {
                 <Link
                   href="/portfolio"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                  className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-xl border-2 border-white/10"
+                  style={{ backgroundColor: 'rgba(255, 241, 5, 0.1)' }}
                 >
                   Portfolio
                 </Link>
@@ -349,7 +342,8 @@ const Navbar = () => {
                 <Link
                   href="/booking"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                  className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-xl border-2 border-white/10"
+                  style={{ backgroundColor: 'rgba(255, 241, 5, 0.1)' }}
                 >
                   Booking
                 </Link>
@@ -358,7 +352,8 @@ const Navbar = () => {
                 <Link
                   href="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                  className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-xl border-2 border-white/10"
+                  style={{ backgroundColor: 'rgba(255, 241, 5, 0.1)' }}
                 >
                   About
                 </Link>
@@ -367,29 +362,33 @@ const Navbar = () => {
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-6 py-4 bg-primary-red/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-lg"
+                  className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg transition-all font-display italic uppercase font-bold text-xl border-2 border-white/10"
+                  style={{ backgroundColor: 'rgba(255, 241, 5, 0.1)' }}
                 >
                   Contact
                 </Link>
 
                 {/* CTA Button */}
-                <Link
-                  href="/booking"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-8 py-5 bg-primary-red text-accent-black rounded-lg font-display italic uppercase font-bold text-xl text-center shadow-lg mt-6"
-                >
-                  Book Now
-                </Link>
+                <div className="mt-8">
+                  <Link
+                    href="/booking"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-8 py-5 text-accent-black rounded-lg font-display italic uppercase font-bold text-2xl text-center"
+                    style={{ backgroundColor: '#FFF105' }}
+                  >
+                    Book Now
+                  </Link>
+                </div>
 
                 {/* User Section */}
                 {user ? (
-                  <div className="pt-6 mt-6 border-t border-white/20">
+                  <div className="pt-8 mt-8 border-t-2 border-white/20">
                     <div className="flex items-center gap-3 mb-4 px-2">
-                      <div className="w-10 h-10 bg-primary-red text-accent-black rounded-full flex items-center justify-center font-bold">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg" style={{ backgroundColor: '#FFF105', color: '#141415' }}>
                         {user.email?.[0].toUpperCase()}
                       </div>
                       <div className="flex-1">
-                        <p className="text-white font-body text-sm">{user.email}</p>
+                        <p className="text-white font-body text-base">{user.email}</p>
                       </div>
                     </div>
                     <button
@@ -397,24 +396,27 @@ const Navbar = () => {
                         signOut();
                         setIsMobileMenuOpen(false);
                       }}
-                      className="w-full px-6 py-3 bg-red-500/20 text-red-400 hover:bg-red-500/30 rounded-lg font-display italic uppercase font-bold"
+                      className="w-full px-6 py-4 text-white rounded-lg font-display italic uppercase font-bold text-lg border-2 border-red-400/50"
+                      style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)' }}
                     >
                       Sign Out
                     </button>
                   </div>
                 ) : (
-                  <div className="pt-6 mt-6 border-t border-white/20 space-y-3">
+                  <div className="pt-8 mt-8 border-t-2 border-white/20 space-y-4">
                     <Link
                       href="/login"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-6 py-3 bg-white/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg font-display italic uppercase font-bold text-center"
+                      className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg font-display italic uppercase font-bold text-lg text-center border-2 border-white/10"
+                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                     >
                       Login
                     </Link>
                     <Link
                       href="/signup"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-6 py-3 bg-white/10 hover:bg-primary-red text-white hover:text-accent-black rounded-lg font-display italic uppercase font-bold text-center"
+                      className="block px-6 py-4 text-white hover:bg-primary-red hover:text-accent-black rounded-lg font-display italic uppercase font-bold text-lg text-center border-2 border-white/10"
+                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                     >
                       Sign Up
                     </Link>
