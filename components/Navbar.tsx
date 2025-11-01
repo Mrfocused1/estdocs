@@ -68,6 +68,7 @@ const Navbar = () => {
   ];
 
   return (
+    <>
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -262,8 +263,9 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+    </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Outside navbar for proper stacking */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -427,7 +429,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 };
 
