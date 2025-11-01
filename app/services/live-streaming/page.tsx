@@ -54,10 +54,11 @@ export default function LiveStreaming() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-3 justify-center leading-tight">
-              <span className="flex items-center gap-3">
-                <span>Professional Live</span>
-                <span className="inline-block h-[1.7em] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+            <h1 className="text-4xl md:text-7xl font-display italic uppercase text-white mb-6 leading-tight">
+              <span className="block">Professional</span>
+              <span className="flex items-center gap-3 justify-center flex-wrap">
+                <span className="text-primary-red">Live</span>
+                <span className="inline-block h-[0.65em] w-[2em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
                   {videoUrl ? (
                     <video
                       autoPlay
@@ -72,8 +73,8 @@ export default function LiveStreaming() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
                   )}
                 </span>
+                <span className="text-primary-red">Streaming</span>
               </span>
-              <span className="text-primary-red">Streaming</span>
             </h1>
             <p className="text-xl text-white/80 font-body mb-8 leading-relaxed">
               {content.liveStreaming.heroDescription}
