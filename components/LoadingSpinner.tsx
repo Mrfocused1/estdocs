@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 interface LoadingSpinnerProps {
   size?: "sm" | "md" | "lg";
-  color?: "yellow" | "white" | "black";
+  color?: "red" | "white" | "black" | "yellow";
 }
 
 export const LoadingSpinner = ({
   size = "md",
-  color = "yellow",
+  color = "red",
 }: LoadingSpinnerProps) => {
   const sizeClasses = {
     sm: "w-4 h-4 border-2",
@@ -21,6 +21,7 @@ export const LoadingSpinner = ({
     red: "border-primary-red border-t-transparent",
     white: "border-white border-t-transparent",
     black: "border-accent-black border-t-transparent",
+    yellow: "border-yellow-400 border-t-transparent",
   };
 
   return (
@@ -36,7 +37,7 @@ export const LoadingSpinner = ({
   );
 };
 
-export const LoadingDots = ({ color = "yellow" }: { color?: "yellow" | "white" }) => {
+export const LoadingDots = ({ color = "red" }: { color?: "red" | "white" }) => {
   const colorClasses = {
     red: "bg-primary-red",
     white: "bg-white",
