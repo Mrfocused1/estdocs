@@ -62,24 +62,26 @@ export default function Editing() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap justify-center leading-tight">
-              <span>Professional Editing</span>
-              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
-                {videoUrl ? (
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                  >
-                    <source src={videoUrl} type="video/mp4" />
-                  </video>
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
-                )}
-              </span>
-              <span className="text-primary-red">Services</span>
+            <h1 className="text-3xl md:text-7xl font-display italic uppercase text-white mb-6 leading-tight">
+              <div className="block mb-2 md:mb-0">Professional</div>
+              <div className="flex items-center gap-3 md:gap-4 justify-center flex-wrap">
+                <span className="inline-block h-[60px] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
+                  {videoUrl ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                    >
+                      <source src={videoUrl} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-dark-navy/50"></div>
+                  )}
+                </span>
+                <span className="text-primary-red">Editing</span>
+              </div>
             </h1>
             <p className="text-xl text-white/80 font-body mb-8 leading-relaxed">
               {content.editing.heroDescription}

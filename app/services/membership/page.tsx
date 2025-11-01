@@ -120,7 +120,7 @@ export default function Membership() {
       {/* Membership Tiers */}
       <section className="section-padding bg-dark-navy">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
             {membershipTiers.map((tier, index) => (
               <motion.div
                 key={index}
@@ -128,45 +128,45 @@ export default function Membership() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className={`card relative ${
+                className={`relative rounded-xl p-5 md:p-10 ${
                   tier.popular
-                    ? "border-primary-red shadow-2xl shadow-primary-red/20 transform md:scale-105"
-                    : "border-primary-red/30"
+                    ? "bg-gradient-to-br from-primary-red/20 to-dark-navy border-2 border-primary-red shadow-2xl shadow-primary-red/20 transform md:scale-105"
+                    : "bg-white/5 border-2 border-primary-red/30"
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-red text-accent-black px-6 py-2 rounded-full font-display italic uppercase font-bold text-sm">
+                  <div className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2 bg-primary-red text-accent-black px-4 md:px-6 py-1 md:py-2 rounded-full font-display italic uppercase font-bold text-xs md:text-sm">
                     Most Popular
                   </div>
                 )}
 
-                <div className="text-center mb-6 mt-4">
-                  <h3 className="text-3xl font-display italic uppercase text-primary-red mb-3">
+                <div className="text-center mb-4 md:mb-6 mt-2 md:mt-4">
+                  <h3 className="text-2xl md:text-3xl font-display italic uppercase text-primary-red mb-2 md:mb-3">
                     {tier.name}
                   </h3>
 
-                  <div className="mb-6">
-                    <div className="text-5xl font-display italic uppercase text-white mb-2">
+                  <div className="mb-4 md:mb-6">
+                    <div className="text-4xl md:text-5xl font-display italic uppercase text-white mb-1 md:mb-2">
                       {tier.price}
                     </div>
-                    <div className="text-white/60 font-body text-sm">
+                    <div className="text-white/60 font-body text-xs md:text-sm">
                       {tier.period}
                     </div>
                   </div>
                 </div>
 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                   {tier.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-primary-red mr-3 mt-1 flex-shrink-0">✓</span>
-                      <span className="text-white/70 font-body text-sm">{feature}</span>
+                      <span className="text-primary-red mr-2 md:mr-3 mt-1 flex-shrink-0 text-sm md:text-base">✓</span>
+                      <span className="text-white/70 font-body text-xs md:text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Link
                   href="/booking"
-                  className={`block text-center w-full py-4 rounded-button font-display font-bold text-lg uppercase transition-all duration-300 ${
+                  className={`block text-center w-full py-3 md:py-4 rounded-button font-display font-bold text-base md:text-lg uppercase transition-all duration-300 ${
                     tier.popular
                       ? "bg-primary-red text-accent-black hover:bg-primary-red/90"
                       : "bg-white/10 text-white border-2 border-primary-red/30 hover:bg-primary-red hover:text-accent-black hover:border-primary-red"

@@ -6,7 +6,8 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 export default function Contact() {
-  const [videoUrl, setVideoUrl] = useState<string>("");
+  // Use a default Pexels video URL as fallback
+  const [videoUrl, setVideoUrl] = useState<string>("https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4");
   const [mapImageUrl, setMapImageUrl] = useState<string>("");
 
   useEffect(() => {
@@ -79,9 +80,9 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-4 flex-wrap justify-center leading-tight">
+            <h1 className="text-3xl md:text-7xl font-display italic uppercase text-white mb-6 flex items-center gap-3 md:gap-4 flex-wrap justify-center leading-tight">
               <span>Get</span>
-              <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+              <span className="inline-block h-[60px] md:h-[0.85em] w-[4em] md:w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
                 {videoUrl ? (
                   <video
                     autoPlay
@@ -89,6 +90,7 @@ export default function Contact() {
                     muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
+                    key={videoUrl}
                   >
                     <source src={videoUrl} type="video/mp4" />
                   </video>

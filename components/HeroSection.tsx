@@ -250,7 +250,7 @@ const HeroSection = () => {
               className="text-white mb-2 md:mb-3 flex items-center gap-2 md:gap-3 flex-wrap justify-center"
             >
               <span>Home</span>
-              <span className="inline-block h-[60px] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
+              <span className="inline-block h-[60px] md:h-[0.85em] w-[4em] md:w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
                 {videoUrl1 ? (
                   <video
                     autoPlay
@@ -282,7 +282,7 @@ const HeroSection = () => {
               variants={wordVariants}
               className="text-white mb-2 md:mb-3 flex items-center gap-2 md:gap-3 justify-center"
             >
-              <span className="inline-block h-[60px] md:h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
+              <span className="inline-block h-[60px] md:h-[0.85em] w-[4em] md:w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
                 {videoUrl2 ? (
                   <video
                     autoPlay

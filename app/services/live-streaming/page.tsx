@@ -58,7 +58,7 @@ export default function LiveStreaming() {
               <span className="block">Professional</span>
               <span className="flex items-center gap-3 justify-center flex-wrap">
                 <span className="text-primary-red">Live</span>
-                <span className="inline-block h-[0.65em] w-[2em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
+                <span className="inline-block h-[1.3em] md:h-[0.65em] w-[2em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
                   {videoUrl ? (
                     <video
                       autoPlay
