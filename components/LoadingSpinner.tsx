@@ -21,7 +21,7 @@ export const LoadingSpinner = ({
     red: "border-primary-red border-t-transparent",
     white: "border-white border-t-transparent",
     black: "border-accent-black border-t-transparent",
-    yellow: "border-yellow-400 border-t-transparent",
+    yellow: "border-primary-yellow border-t-transparent",
   };
 
   return (

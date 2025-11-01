@@ -106,7 +106,7 @@ export const FileUpload = ({ label, accept, currentUrl, onUploadComplete, type =
           >
             {uploading ? (
               <>
-                <LoadingSpinner size="sm" color="yellow" />
+                <LoadingSpinner size="sm" color="red" />
                 Uploading...
               </>
             ) : (

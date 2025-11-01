@@ -644,7 +644,7 @@ const BookingForm = () => {
             onClick={nextStep}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 bg-primary-red text-accent-black px-8 py-3 rounded-button font-display uppercase font-bold hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-primary-red/30"
+            className="flex items-center gap-2 bg-primary-red text-accent-black px-8 py-3 rounded-button font-display uppercase font-bold hover:bg-primary-yellow transition-all duration-300 shadow-lg shadow-primary-red/30"
           >
             <span>Next</span>
             <FaArrowRight />
