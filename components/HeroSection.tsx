@@ -236,12 +236,12 @@ const HeroSection = () => {
           {/* Line 1: The Creative Home [VIDEO] of London's */}
           <motion.h1
             variants={wordVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 justify-center"
+            className="text-4xl md:text-6xl lg:text-7xl font-display italic uppercase text-white mb-3 leading-tight flex items-center gap-3 flex-wrap justify-center"
           >
             <span>The </span>
             <span className="text-primary-red">Creative</span>
             <span> Home</span>
-            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
               {videoUrl1 ? (
                 <video
                   autoPlay
@@ -266,7 +266,7 @@ const HeroSection = () => {
           >
             <span className="text-primary-red">Boldest</span>
             {/* Video Box 2 */}
-            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy">
+            <span className="inline-block h-[0.85em] w-[2.5em] border-2 border-primary-red rounded-xl overflow-hidden relative bg-gradient-to-br from-primary-red/20 to-dark-navy flex-shrink-0">
               {videoUrl2 ? (
                 <video
                   autoPlay
