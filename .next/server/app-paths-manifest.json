@@ -1,0 +1,10 @@
+{
+  "/page": "app/page.js",
+  "/portfolio/page": "app/portfolio/page.js",
+  "/booking/page": "app/booking/page.js",
+  "/services/studio-hire/page": "app/services/studio-hire/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/services/live-streaming/page": "app/services/live-streaming/page.js",
+  "/services/editing/page": "app/services/editing/page.js",
+  "/services/membership/page": "app/services/membership/page.js"
+}
