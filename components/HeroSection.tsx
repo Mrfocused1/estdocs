@@ -234,7 +234,7 @@ const HeroSection = () => {
           className="max-w-4xl mx-auto"
         >
           {/* Mobile & Desktop Headline */}
-          <div className="text-3xl md:text-6xl lg:text-7xl font-display italic uppercase leading-tight">
+          <div className="text-3xl md:text-5xl lg:text-6xl font-display italic uppercase leading-tight">
             {/* Line 1: The Creative */}
             <motion.h1
               variants={wordVariants}
@@ -305,7 +305,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-lg md:text-2xl text-white/90 font-body mt-8 mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-white/90 font-body mt-6 md:mt-8 mb-8 md:mb-10 max-w-3xl mx-auto"
           >
             London's premier podcast, video, and livestream studio. Where
             creators, influencers, and brands craft unforgettable content.
@@ -315,7 +315,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pb-6 md:pb-10"
           >
             <Link href="/booking" className="btn-primary w-full sm:w-auto">
               Book Your Session
